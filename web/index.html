@@ -1,0 +1,625 @@
+<<<<<<< HEAD
+<!DOCTYPE HTML>
+<HTML>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>GICU-3 komponentindex</title>
+
+    <style>
+        p {
+        text-align: left;
+        font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+        text-align: left;
+        font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h2 {
+        text-align: left;
+        font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h3 {
+        text-align: left;
+        font-family: Arial, Helvetica, sans-serif;
+        }
+
+    </style>
+
+    <body>
+        <h1>GICU-3</h1>
+        <h2>Vänligen välj vad du vill göra:</h2>
+        <p>Här är dina alternativ, välj vad du vill. Vi bryr oss inte.</p>
+        
+    </body>
+
+</HTML>
+=======
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Microfridge</title>
+    <style type="text/css">
+        /* Chart.js */
+        body {
+            background-color: rgb(19, 19, 19);
+            margin: 0;
+            overflow:hidden;
+        }
+
+        @keyframes chartjs-render-animation {
+            from {
+                opacity: .99
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .chartjs-render-monitor {
+            animation: chartjs-render-animation 1ms
+        }
+
+        .chartjs-size-monitor,
+        .chartjs-size-monitor-expand,
+        .chartjs-size-monitor-shrink {
+            position: absolute;
+            direction: ltr;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+            visibility: hidden;
+            z-index: -1
+        }
+
+        .chartjs-size-monitor-expand>div {
+            position: absolute;
+            width: 1000000px;
+            height: 1000000px;
+            left: 0;
+            top: 0
+        }
+
+        .chartjs-size-monitor-shrink>div {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            left: 0;
+            top: 0
+        }
+
+        canvas {
+
+            width: 100%;
+            height: 49% !important;
+        }
+
+        .menu-icons a:hover {
+            background-color: rgb(21, 21, 21);
+        }
+        
+        
+
+
+
+    </style>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.1/tailwind.min.css'>
+</head>
+
+<body>
+    <div class="flex flex-col items-center w-16 h-full overflow-hidden text-gray-400 rounded" style="background-color: rgb(11, 11, 11);">
+		<a class="flex items-center justify-center mt-3" href="/">
+			<svg class="w-8 h-8 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+				<path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z" />
+			</svg>
+		</a>
+		<div class="flex flex-col items-center mt-3 border-t border-gray-700 menu-icons">
+			<a class="flex items-center justify-center w-12 h-12 mt-2 rounded hover:text-gray-300" href="/">
+				<svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				 	<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+				</svg>
+			</a>
+			<a class="flex items-center justify-center w-12 h-12 mt-2 text-gray-200 rounded" style="background-color: rgb(21, 21, 21);" href="/data">
+				<svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+				</svg>
+			</a>
+		</div>
+		<div class="flex flex-col items-center mt-2 border-t border-gray-700 menu-icons">
+			<a class="flex items-center justify-center w-12 h-12 mt-2 rounded hover:text-gray-300" href="/about">
+				<svg class="w-6 h-6 stroke-current"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+				</svg>
+			</a>
+		</div>
+	</div>
+    <!-- partial:index.partial.html -->
+    <div style="text-align:center;">
+        <div style="vertical-align: middle; top:0px;right:0;float:right;height:100%;width: calc(100% - 80px);margin: 10px;position:fixed;  ">
+            <div style="width:100%;margin:none;">
+                <canvas id="pel-canvas"></canvas>
+            </div>
+            <div style="width:100%;">
+                <canvas id="fan-canvas"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <meta http-equiv="refresh" content="60">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script>
+        function msToTime(duration) {
+
+            var today = new Date(duration);
+
+            var minutes = /*Math.ceil(*/ today.getMinutes() /* / 5) * 5*/ ;
+            var hours = today.getHours();
+            if (minutes == 60) {
+                hours += 1;
+                minutes = "00";
+            } else if (minutes == 1) {
+                minutes = "01";
+            } else if (minutes == 2) {
+                minutes = "02";
+            } else if (minutes == 3) {
+                minutes = "03";
+            } else if (minutes == 4) {
+                minutes = "04";
+            } else if (minutes == 5) {
+                minutes = "05";
+            } else if (minutes == 6) {
+                minutes = "06";
+            } else if (minutes == 7) {
+                minutes = "07";
+            } else if (minutes == 8) {
+                minutes = "08";
+            } else if (minutes == 9) {
+                minutes = "09";
+            } else if (minutes == 0) {
+                minutes = "00";
+            }
+
+            var time = hours + ":" + minutes;
+            return time;
+        }
+        window.chartColors = {
+            red: 'rgb(255, 50, 80)',
+            orange: 'rgb(255, 120, 40)',
+            yellow: 'rgb(255, 205, 86)',
+            green: 'rgb(75, 192, 80)',
+            blue: 'rgb(54, 162, 235)',
+            purple: 'rgb(153, 102, 255)',
+            grey: 'rgb(231,233,237)'
+        };
+        var pel_line1 = [25.8, 25.9, 25.9, 26.0, 26.0, 26.0, 25.9, 25.9, 26.1, 25.9, 25.9, 26.0, 25.9, 25.9, 25.9, 25.9,
+            25.9, 25.9, 25.9, 25.8, 25.7, 25.9, 25.8, 25.8, 25.8, 25.8, 25.9, 25.9, 25.8, 26.0, 25.9, 25.8, 26.0,
+            26.0, 26.3, 25.8, 25.9, 26.0, 25.8, 26.0, 25.9, 25.9, 25.9, 25.7, 26.1, 26.0, 25.9, 25.8, 26.1, 25.8,
+            25.9, 25.9, 26.0, 25.9, 25.9, 26.0, 25.9, 25.9, 26.1, 26.0, 25.8, 25.9, 25.9, 25.8, 25.8, 25.9, 25.9,
+            26.0, 25.9, 25.9, 25.3, 25.3, 25.9, 25.8, 25.8, 25.9, 25.9, 25.9, 25.9, 25.9, 26.1, 26.1, 25.9, 26.0,
+            25.8, 25.9, 25.8, 25.9, 25.9, 26.1, 25.9, 26.0, 25.9, 25.9, 25.9, 26.0, 25.9, 25.8, 25.9, 26.1, 25.9,
+            25.9, 25.8, 25.9, 25.9, 26.3, 26.1, 26.0, 25.9, 25.9, 26.0, 25.8, 25.9, 25.9, 25.9, 25.8, 25.9, 25.9,
+            25.9, 25.8, 25.9, 25.9, 25.8, 26.0, 25.9, 25.9, 26.2, 25.8, 26.0, 25.8, 25.9, 25.9, 25.8, 25.9, 25.9,
+            25.8, 25.9, 25.9, 25.9, 25.7, 25.9, 25.8, 26.1, 25.8,25.9, 25.9, 26.0, 25.8, 25.9, 25.9, 25.9, 25.8, 25.9, 25.9,
+            25.9, 25.8, 25.9, 25.9, 25.8, 26.0, 25.9, 25.9, 26.2, 25.8, 26.0, 25.8, 25.9, 25.9, 25.8, 25.9, 25.9,
+            25.8, 25.9, 25.9, 25.9, 25.7, 25.9, 25.8, 26.1, 25.8,
+        ];
+        var pel_line2 = [8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0,
+            8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0,
+            8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0,
+            8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0,
+            8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0,
+            8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0,
+            8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0,
+        ];
+        var fan_line1 = [24.7, 24.9, 24.8, 24.7, 24.9, 24.9, 24.8, 24.8, 25.0, 24.9, 24.8, 24.7, 24.8, 24.9, 24.8, 24.6,
+            24.7, 24.6, 24.9, 24.8, 24.5, 25.0, 24.8, 24.8, 24.9, 24.8, 25.0, 24.8, 25.0, 24.8, 24.8, 24.8, 24.8,
+            24.9, 24.9, 24.8, 24.7, 24.8, 24.8, 24.7, 24.7, 24.8, 24.9, 24.5, 24.8, 24.7, 24.8, 24.7, 24.8, 24.8,
+            24.8, 24.8, 24.8, 24.8, 24.8, 24.8, 24.8, 24.7, 24.9, 24.8, 24.8, 24.9, 24.8, 24.9, 24.8, 24.8, 24.8,
+            24.8, 24.9, 24.9, 24.8, 25.0, 24.8, 24.8, 24.8, 24.9, 24.8, 25.1, 25.1, 24.7, 24.8, 24.7, 24.8, 24.7,
+            24.7, 24.8, 24.6, 24.9, 24.8, 24.9, 24.8, 24.7, 24.8, 24.9, 24.8, 24.8, 25.0, 24.7, 24.7, 24.7, 24.8,
+            24.9, 24.8, 24.7, 24.6, 24.9, 24.8, 24.7, 24.9, 24.9, 24.7, 24.7, 25.1, 26.0, 27.0, 27.9, 28.5, 28.9,
+            29.3, 29.3, 29.6, 29.7, 29.7, 29.7, 29.7, 29.8, 30.0, 30.1, 30.2, 30.3, 30.3, 30.4, 30.4, 30.4, 30.4,
+            30.4, 30.2, 30.5, 30.3, 29.8, 29.7, 29.5, 29.5, 29.1, 28.6, 28.1, 27.2, 26.4, 25.3,  24.9, 24.8, 24.7, 24.9, 24.9, 24.8, 24.9, 24.8, 24.7, 24.9, 24.9, 24.8, 24.9, 24.8, 24.7, 24.9, 24.9, 24.8, 24.9, 24.8, 24.7,  24.9, 24.8, 24.7,  24.9, 24.8, 24.7,  24.9, 24.8, 24.7,  24.9,
+        ];
+        var fan_line2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 90, 90, 91, 92, 92, 93, 93, 93,
+            93, 93, 91, 94, 92, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        ];
+        var today = new Date();
+        var time = [msToTime(today - 10800000),
+            msToTime(today - 10740000),
+            msToTime(today - 10680000),
+            msToTime(today - 10620000),
+            msToTime(today - 10560000),
+            msToTime(today - 10500000),
+            msToTime(today - 10440000),
+            msToTime(today - 10380000),
+            msToTime(today - 10320000),
+            msToTime(today - 10260000),
+            msToTime(today - 10200000),
+            msToTime(today - 10140000),
+            msToTime(today - 10080000),
+            msToTime(today - 10020000),
+            msToTime(today - 9960000),
+            msToTime(today - 9900000),
+            msToTime(today - 9840000),
+            msToTime(today - 9780000),
+            msToTime(today - 9720000),
+            msToTime(today - 9660000),
+            msToTime(today - 9600000),
+            msToTime(today - 9540000),
+            msToTime(today - 9480000),
+            msToTime(today - 9420000),
+            msToTime(today - 9360000),
+            msToTime(today - 9300000),
+            msToTime(today - 9240000),
+            msToTime(today - 9180000),
+            msToTime(today - 9120000),
+            msToTime(today - 9060000),
+            msToTime(today - 9000000),
+            msToTime(today - 8940000),
+            msToTime(today - 8880000),
+            msToTime(today - 8820000),
+            msToTime(today - 8760000),
+            msToTime(today - 8700000),
+            msToTime(today - 8640000),
+            msToTime(today - 8580000),
+            msToTime(today - 8520000),
+            msToTime(today - 8460000),
+            msToTime(today - 8400000),
+            msToTime(today - 8340000),
+            msToTime(today - 8280000),
+            msToTime(today - 8220000),
+            msToTime(today - 8160000),
+            msToTime(today - 8100000),
+            msToTime(today - 8040000),
+            msToTime(today - 7980000),
+            msToTime(today - 7920000),
+            msToTime(today - 7860000),
+            msToTime(today - 7800000),
+            msToTime(today - 7740000),
+            msToTime(today - 7680000),
+            msToTime(today - 7620000),
+            msToTime(today - 7560000),
+            msToTime(today - 7500000),
+            msToTime(today - 7440000),
+            msToTime(today - 7380000),
+            msToTime(today - 7320000),
+            msToTime(today - 7260000),
+            msToTime(today - 7200000),
+            msToTime(today - 7140000),
+            msToTime(today - 7080000),
+            msToTime(today - 7020000),
+            msToTime(today - 6960000),
+            msToTime(today - 6900000),
+            msToTime(today - 6840000),
+            msToTime(today - 6780000),
+            msToTime(today - 6720000),
+            msToTime(today - 6660000),
+            msToTime(today - 6600000),
+            msToTime(today - 6540000),
+            msToTime(today - 6480000),
+            msToTime(today - 6420000),
+            msToTime(today - 6360000),
+            msToTime(today - 6300000),
+            msToTime(today - 6240000),
+            msToTime(today - 6180000),
+            msToTime(today - 6120000),
+            msToTime(today - 6060000),
+            msToTime(today - 6000000),
+            msToTime(today - 5940000),
+            msToTime(today - 5880000),
+            msToTime(today - 5820000),
+            msToTime(today - 5760000),
+            msToTime(today - 5700000),
+            msToTime(today - 5640000),
+            msToTime(today - 5580000),
+            msToTime(today - 5520000),
+            msToTime(today - 5460000),
+            msToTime(today - 5400000),
+            msToTime(today - 5340000),
+            msToTime(today - 5280000),
+            msToTime(today - 5220000),
+            msToTime(today - 5160000),
+            msToTime(today - 5100000),
+            msToTime(today - 5040000),
+            msToTime(today - 4980000),
+            msToTime(today - 4920000),
+            msToTime(today - 4860000),
+            msToTime(today - 4800000),
+            msToTime(today - 4740000),
+            msToTime(today - 4680000),
+            msToTime(today - 4620000),
+            msToTime(today - 4560000),
+            msToTime(today - 4500000),
+            msToTime(today - 4440000),
+            msToTime(today - 4380000),
+            msToTime(today - 4320000),
+            msToTime(today - 4260000),
+            msToTime(today - 4200000),
+            msToTime(today - 4140000),
+            msToTime(today - 4080000),
+            msToTime(today - 4020000),
+            msToTime(today - 3960000),
+            msToTime(today - 3900000),
+            msToTime(today - 3840000),
+            msToTime(today - 3780000),
+            msToTime(today - 3720000),
+            msToTime(today - 3660000),
+            msToTime(today - 3600000),
+            msToTime(today - 3540000),
+            msToTime(today - 3480000),
+            msToTime(today - 3420000),
+            msToTime(today - 3360000),
+            msToTime(today - 3300000),
+            msToTime(today - 3240000),
+            msToTime(today - 3180000),
+            msToTime(today - 3120000),
+            msToTime(today - 3060000),
+            msToTime(today - 3000000),
+            msToTime(today - 2940000),
+            msToTime(today - 2880000),
+            msToTime(today - 2820000),
+            msToTime(today - 2760000),
+            msToTime(today - 2700000),
+            msToTime(today - 2640000),
+            msToTime(today - 2580000),
+            msToTime(today - 2520000),
+            msToTime(today - 2460000),
+            msToTime(today - 2400000),
+            msToTime(today - 2340000),
+            msToTime(today - 2280000),
+            msToTime(today - 2220000),
+            msToTime(today - 2160000),
+            msToTime(today - 2100000),
+            msToTime(today - 2040000),
+            msToTime(today - 1980000),
+            msToTime(today - 1920000),
+            msToTime(today - 1860000),
+            msToTime(today - 1800000),
+            msToTime(today - 1740000),
+            msToTime(today - 1680000),
+            msToTime(today - 1620000),
+            msToTime(today - 1560000),
+            msToTime(today - 1500000),
+            msToTime(today - 1440000),
+            msToTime(today - 1380000),
+            msToTime(today - 1320000),
+            msToTime(today - 1260000),
+            msToTime(today - 1200000),
+            msToTime(today - 1140000),
+            msToTime(today - 1080000),
+            msToTime(today - 1020000),
+            msToTime(today - 960000),
+            msToTime(today - 900000),
+            msToTime(today - 840000),
+            msToTime(today - 780000),
+            msToTime(today - 720000),
+            msToTime(today - 660000),
+            msToTime(today - 600000),
+            msToTime(today - 540000),
+            msToTime(today - 480000),
+            msToTime(today - 420000),
+            msToTime(today - 360000),
+            msToTime(today - 300000),
+            msToTime(today - 240000),
+            msToTime(today - 180000),
+            msToTime(today - 120000),
+            msToTime(today - 60000),
+        ];
+        var config = {
+            type: 'line',
+            data: {
+                labels: time,
+                datasets: [{
+                    label: "Temperature",
+                    backgroundColor: window.chartColors.blue,
+                    borderColor: window.chartColors.blue,
+                    data: pel_line1,
+                    fill: false,
+                }, {
+                    label: "Set Point",
+                    backgroundColor: window.chartColors.red,
+                    borderColor: window.chartColors.red,
+                    fill: false,
+                    data: pel_line2,
+                    lineTension: 0,
+                }]
+            },
+            options: {
+                elements: {
+                    point: {
+                        radius: 0
+                    }
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+                title: {
+                    display: true,
+                    text: 'Microfridge Temperature'
+                },
+                tooltips: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                hover: {
+                    mode: 'nearest',
+                    intersect: true
+                },
+                scales: {
+                    xAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Time',
+                        },
+                        ticks: {
+                            font: function (context) {
+                                var width = context.chart.width;
+                                var size = Math.round(width / 32);
+                                return {
+                                    size: size,
+                                    weight: 600
+                                }
+                            },
+                            callback: function (value, index, values) {
+                                
+                                value2 = value.substring(0, value.indexOf(":"));
+                                value = value.substring(value.indexOf(":") + 1);
+                                if (value % 5 === 0) {
+                                    if (value == 0) {
+                                        value = "00";
+                                    } else if (value == 60) {
+                                        value2 += 1;
+                                        value == "00";
+                                    }
+                                    console.log(value2 + ":" + value);
+                                    return value2 + ":" + value;
+                                } else {
+                                    console.log("blank");
+                                    return '';
+                                }
+
+                            },
+
+
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Temperature (°C)'
+                        },
+                        ticks: {
+                            beginAtZero: true,
+                            min: 0,
+
+                        }
+                    }]
+                }
+            }
+        };
+        var config2 = {
+            type: 'line',
+            data: {
+                labels: time,
+                datasets: [{
+                    label: "Temperature",
+                    backgroundColor: window.chartColors.orange,
+                    borderColor: window.chartColors.orange,
+                    data: fan_line1,
+                    fill: false,
+                    yAxisID: 'A',
+                }, {
+                    label: "Fan PWM",
+                    backgroundColor: window.chartColors.green,
+                    borderColor: window.chartColors.green,
+                    fill: false,
+                    data: fan_line2,
+                    lineTension: 0,
+                    yAxisID: 'B',
+                }]
+            },
+            options: {
+                elements: {
+                    point: {
+                        radius: 0
+                    }
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+                title: {
+                    display: true,
+                    text: 'Fan Control'
+                },
+                tooltips: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                hover: {
+                    mode: 'nearest',
+                    intersect: true
+                },
+                scales: {
+                    xAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Time'
+                        },
+                        ticks: {
+                            
+                            callback: function (value, index, values) {
+                               
+                                value2 = value.substring(0, value.indexOf(":"));
+                                value = value.substring(value.indexOf(":") + 1);
+                                if (value % 5 === 0) {
+                                    if (value == 0) {
+                                        value = "00";
+                                    } else if (value == 60) {
+                                        value2 += 1;
+                                        value == "00";
+                                    }
+                                    console.log(value2 + ":" + value);
+                                    return value2 + ":" + value;
+                                } else {
+                                    console.log("blank");
+                                    return '';
+                                }
+
+                            },
+                        }
+                    }],
+                    yAxes: [{
+
+                        id: 'A',
+                        type: 'linear',
+                        position: 'left',
+                        ticks: {
+                            max: 70,
+                            min: 0,
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Temperature (°C)'
+                        },
+                    }, {
+                        id: 'B',
+                        type: 'linear',
+                        position: 'right',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 255,
+                            min: 0,
+                            stepSize: 45
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Fan PWM'
+                        },
+                    }]
+                }
+            }
+        };
+        var ctx = document.getElementById("pel-canvas").getContext("2d");
+        var myLine = new Chart(ctx, config);
+        var ctx2 = document.getElementById("fan-canvas").getContext("2d");
+        var myLine2 = new Chart(ctx2, config2);
+
+        Chart.defaults.global.defaultFontColor = "#9CA3AF";
+    </script>
+</body>
+
+</html>
+>>>>>>> 928cf8cb548f6d1a50d530c7836d3b3dc3656e1d
