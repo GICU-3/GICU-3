@@ -1,0 +1,6 @@
+:root{
+    --background-color: rgb(19, 19, 19);
+    --menu-item-hover-color: rgb(21, 21, 21);
+    --menu-item-selected-color: rgb(21, 21, 21);
+    --menu-background-color: rgb(11, 11, 11);
+}
