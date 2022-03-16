@@ -1,8 +1,8 @@
 set /p comment="Comment: "
 
-cd C:\Users\Deltagare\Desktop\GICU-3
-git config --global user.email "simon.k.hellsing@gmail.com"
-git config --global user.name "031simon"
+cd .\GICU-3
+git config --global user.email "example@gmail.com"
+git config --global user.name "example"
 git add -A
 git commit -a -m "%comment%"
 git push
