@@ -65,4 +65,18 @@ body .searchbar .button :hover {
 body .searchbar h2 {
   font-size: 1em;
 }
+
+body .labbar {
+  width: 50%;
+  text-align: center;
+  background-color: #333333;
+  border-radius: 1em;
+  margin: auto;
+  padding-bottom: 1em;
+}
+
+body .labbar h2 {
+  color: white;
+  margin: 0.5em;
+}
 /*# sourceMappingURL=main.css.map */
