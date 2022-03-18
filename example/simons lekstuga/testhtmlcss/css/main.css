@@ -1,0 +1,68 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
+body {
+  font-family: 'Ubuntu', sans-serif;
+  margin: 0;
+  background-color: #8a8a8a;
+}
+
+body .navbar {
+  background-color: white;
+  padding: 0.5em;
+}
+
+body .home {
+  font-size: 150%;
+  margin: 0.5em;
+  -webkit-text-decoration: 0;
+          text-decoration: 0;
+  font-size: 1em;
+  color: #00b400;
+  font-weight: bold;
+}
+
+body .searchbar {
+  margin: auto;
+  width: 50%;
+  margin-top: 3em;
+  border-radius: 1em;
+  text-align: center;
+  padding-bottom: 1em;
+  background-color: #333333;
+  color: white;
+  font-size: 1.3em;
+}
+
+body .searchbar span {
+  color: #00b400;
+}
+
+body .searchbar input {
+  display: inline;
+}
+
+body .searchbar .söklåda {
+  width: 70%;
+  height: 2em;
+  border-radius: 0.4em;
+}
+
+body .searchbar .button {
+  height: 2.2em;
+  width: 20%;
+  background-color: white;
+  border-radius: 1.3em;
+  font-size: 0.7em;
+  color: #00b400;
+  border-color: #00b400;
+  cursor: pointer;
+}
+
+body .searchbar .button :hover {
+  font-weight: bolder;
+}
+
+body .searchbar h2 {
+  font-size: 1em;
+}
+/*# sourceMappingURL=main.css.map */
