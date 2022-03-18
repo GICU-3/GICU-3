@@ -1,0 +1,27 @@
+[{
+        "text": "Dashboard",
+        "redirect": "/index.html"
+    },
+    {
+        "text": "Settings",
+        "dropdown": [{
+                "text": "Theme",
+                "redirect": "/theme.html"
+            },
+            {
+                "text": "Log",
+                "redirect": "/log.html"
+            },
+            {
+                "text": "Testing",
+                "redirect": "/testing.html"
+            }
+        ]
+    },
+    {
+        "text": "Search",
+        "redirect": "#",
+        "input":"search"
+    }
+
+]

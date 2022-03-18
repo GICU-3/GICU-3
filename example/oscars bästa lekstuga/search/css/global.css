@@ -1,0 +1,42 @@
+body {
+    background: var(--bgcolor);
+    /* animation: fadeIn 1s forwards; */
+}
+
+body a {
+  color:var(--titlebartextcolor);
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--titlebarcolor); 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+
+  .contentBox {
+    margin:10px;background:var(--contentbackgroundcolor);border-radius: 3px;padding-bottom:5px;padding-top:5px;
+  }
