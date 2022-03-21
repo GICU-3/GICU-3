@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
 body {
   font-family: 'Ubuntu', sans-serif;
@@ -41,7 +40,7 @@ body .searchbar input {
   display: inline;
 }
 
-body .searchbar .söklåda {
+body .searchbar .search {
   width: 70%;
   height: 2em;
   border-radius: 0.4em;

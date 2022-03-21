@@ -1,0 +1,30 @@
+div#titlebar{
+    border:1px solid red;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: center;
+}
+
+div#titlebar img{
+    position: relative;
+    display: -webkit-box;
+    /* display: flex; */
+    /* -webkit-box-orient: horizontal; */
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 45px;
+    height: 29px;
+}
+div#titlebar{
+    align-items: center;
+    cursor: pointer;
+}
+div#titlebar a:hover{
+    opacity: .7;
+    background-color: red;
+}
