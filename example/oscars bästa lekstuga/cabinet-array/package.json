@@ -1,0 +1,17 @@
+{
+  "name": "cabinet-array",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^17.1.2"
+  },
+  "dependencies": {
+    "gridstack": "^5.0.0"
+  }
+}

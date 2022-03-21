@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="grid.css">
+</head>
+<body>
+    <div>
+        <script src="node_modules/gridstack/dist/gridstack-h5.js"></script>
+        <link href="node_modules/gridstack/dist/gridstack.min.css" rel="stylesheet"/>
+        <style type="text/css">
+        .grid-stack { background: #FAFAD2; }
+        .grid-stack-item-content { background-color: #18BC9C; }
+        </style>
+
+        <div class="grid-stack"></div>
+
+        <script type="text/javascript">
+        var items = [
+            {x:5, w:12, h:2, subGrid: {children: 
+                [
+                    {x:0, y:1, w:3},
+                    {x:3, y:1, w:3},
+                    {x:6, y:1, w:3},
+                    {x:9, y:1, w:3},
+
+                ]
+            }},
+            {x:5, w:12, h:1, subGrid: {children: 
+                [
+                    {x:0, y:1, w:3},
+                    {x:3, y:1, w:3},
+                    {x:6, y:1, w:3},
+                    {x:9, y:1, w:3},
+
+                ]
+            }},
+            {x:5, w:12, h:1, subGrid: {children: 
+                [
+                    {x:0, y:1, w:3},
+                    {x:3, y:1, w:3},
+                    {x:6, y:1, w:3},
+                    {x:9, y:1, w:3},
+
+                ]
+            }},
+        ];
+        var grid = GridStack.init();
+        grid.load(items);
+        </script>
+    </div>
+</body>
+</html>
