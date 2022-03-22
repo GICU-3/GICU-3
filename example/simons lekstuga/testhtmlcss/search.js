@@ -1,4 +1,5 @@
 const Fuse = require('fuse.js')
+const fs = require('fs')
 
 function sleep(ms) {
     return new Promise((resolve) => {

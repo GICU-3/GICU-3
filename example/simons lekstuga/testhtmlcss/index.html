@@ -9,16 +9,17 @@
         <script defer src="search.js"></script>
     </head>
     <body>
-        <nav class="navbar" id="titlebar">
-            <div class="container" id="menubarContainer">
+        <nav class="navbar">
+            <div class="container">
                 <a class="home" href="#">Home</a>
             </div>
         </nav>
         <section class="searchbar">
             <h1>GICU-<span>3</span></h1>
             <h2>Sök databas</h2>
-            <input class="search" type="text" placeholder="enter component name or keyword">
-            <input class="button" type="button" value="Search">
+            <input id="search" class="search" type="text" placeholder="enter component name or keyword">
+            <!-- <input class="button" type="button" value="Search"> -->
+            <div id="searchResult"></div>
         </section>
         <section class="labbar">
             <h2>Labbar</h2>

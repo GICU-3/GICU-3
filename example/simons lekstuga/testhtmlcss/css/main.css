@@ -30,6 +30,19 @@ body .searchbar {
   background-color: #333333;
   color: white;
   font-size: 1.3em;
+  /*.button{
+            height: 2.2em;
+            width: 20%;
+            background-color: white;
+            border-radius: 1.3em;
+            font-size: 0.7em;
+            color: rgb(0, 180, 0);
+            border-color: rgb(0, 180, 0);
+            cursor: pointer;
+            :hover {
+                font-weight: bolder;
+            }
+        }*/
 }
 
 body .searchbar span {
@@ -44,21 +57,7 @@ body .searchbar .search {
   width: 70%;
   height: 2em;
   border-radius: 0.4em;
-}
-
-body .searchbar .button {
-  height: 2.2em;
-  width: 20%;
-  background-color: white;
-  border-radius: 1.3em;
-  font-size: 0.7em;
-  color: #00b400;
-  border-color: #00b400;
-  cursor: pointer;
-}
-
-body .searchbar .button :hover {
-  font-weight: bolder;
+  margin-bottom: 1em;
 }
 
 body .searchbar h2 {
@@ -77,5 +76,41 @@ body .labbar {
 body .labbar h2 {
   color: white;
   margin: 0.5em;
+}
+
+body .searchContentDiv {
+  border-top: 1px dashed #000;
+  background: var(--titlebarcolor);
+  height: 25px;
+}
+
+body .searchContentDivDescription {
+  background: var(--contentbackgroundcolor);
+  height: 100px;
+  width: 304px;
+  margin-left: 96px;
+  position: relative;
+  border-top-left-radius: 5px;
+  top: -104px;
+  font-size: 12px;
+}
+
+body .searchContentDivDescription a {
+  display: none;
+  position: relative;
+  width: 150px;
+  left: 0px;
+}
+
+body #searchResult > div {
+  width: auto;
+  height: 121px;
+  background: var(--titlebarcolor);
+}
+
+body #searchResult img {
+  width: auto;
+  height: 96px;
+  background: var(--titlebarcolor);
 }
 /*# sourceMappingURL=main.css.map */

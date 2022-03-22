@@ -3,13 +3,14 @@ const path = require('path')
 
 function createWindow () {
     const win = new BrowserWindow({
-        width: 1024,
-        height: 600,
+        width: 1280,
+        height: 720,
         frame: false,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'),
             nodeIntegration: true,
-            enableRemoteModule: true
+            enableRemoteModule: true,
+            contextIsolation: false
         },
         resizable: false
     })
@@ -33,11 +34,11 @@ app.on('window-all-closed', () => {
   }
 })
 
-app.on('ready', () => {
+/*app.on('ready', () => {
   mainWindow = new BrowserWindow({
       webPreferences: {
           nodeIntegration: true,
           contextIsolation: false,
       }
   });
-});
+});*/

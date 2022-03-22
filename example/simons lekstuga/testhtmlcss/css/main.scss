@@ -36,8 +36,9 @@ body{
             width: 70%;
             height: 2em;
             border-radius: 0.4em;
+            margin-bottom: 1em;
         }
-        .button{
+        /*.button{
             height: 2.2em;
             width: 20%;
             background-color: white;
@@ -49,7 +50,7 @@ body{
             :hover {
                 font-weight: bolder;
             }
-        }
+        }*/
         h2{
             font-size: 1em;
             //margin-bottom: -0.2em;
@@ -66,5 +67,40 @@ body{
             color: white;
             margin: 0.5em;
         }
+    }
+    .searchContentDiv {
+        border-top: 1px dashed #000;
+        background: var(--titlebarcolor);
+        height: 25px;
+    }
+    .searchContentDivDescription {
+        background: var(--contentbackgroundcolor);
+        height: 100px;
+        width: 304px;
+        margin-left: 96px;
+        position: relative;
+        border-top-left-radius: 5px;
+        top: -104px;
+        font-size: 12px;
+    }
+    .searchContentDivDescription a {
+        display: none;
+        position: relative;
+        width: 150px;
+        left:0px;
+    }
+    
+    
+    #searchResult > div {
+        width: auto;
+        height: 121px;
+        background: var(--titlebarcolor);
+        //overflow: hidden;
+    }
+    
+    #searchResult img {
+        width: auto;
+        height: 96px;
+        background: var(--titlebarcolor);
     }
 }
