@@ -10,12 +10,18 @@ body .navbar {
   padding: 0.5em;
 }
 
-body .home {
-  font-size: 150%;
+body .navbar .home {
   margin: 0.5em;
   -webkit-text-decoration: 0;
           text-decoration: 0;
-  font-size: 1em;
+  color: #00b400;
+  font-weight: bold;
+}
+
+body .navbar .labbar {
+  -webkit-text-decoration: 0;
+          text-decoration: 0;
+  margin: 0.5em;
   color: #00b400;
   font-weight: bold;
 }
@@ -60,26 +66,8 @@ body .searchbar .search {
   margin-bottom: 1em;
 }
 
-body .searchbar h2 {
-  font-size: 1em;
-}
-
-body .labbar {
-  width: 50%;
-  text-align: center;
-  background-color: #333333;
-  border-radius: 1em;
-  margin: auto;
-  padding-bottom: 1em;
-}
-
-body .labbar h2 {
-  color: white;
-  margin: 0.5em;
-}
-
 body .searchContentDiv {
-  border-top: 1px dashed #000;
+  border: 1px dashed white;
   background: var(--titlebarcolor);
   height: 25px;
 }
@@ -88,7 +76,7 @@ body .searchContentDivDescription {
   background: var(--contentbackgroundcolor);
   height: 100px;
   width: 304px;
-  margin-left: 96px;
+  margin-top: 100px;
   position: relative;
   border-top-left-radius: 5px;
   top: -104px;
@@ -96,7 +84,6 @@ body .searchContentDivDescription {
 }
 
 body .searchContentDivDescription a {
-  display: none;
   position: relative;
   width: 150px;
   left: 0px;
@@ -110,7 +97,7 @@ body #searchResult > div {
 
 body #searchResult img {
   width: auto;
-  height: 96px;
+  height: 48px;
   background: var(--titlebarcolor);
 }
 /*# sourceMappingURL=main.css.map */

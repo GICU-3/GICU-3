@@ -19,7 +19,7 @@
     },
     {
         "utility": "Template",
-        "icon": "\\utility\\template\\icon.png",
+        "icon": "images\\template.jpg",
         "description": "A template",
         "redirect": "\\utility\\template\\index.html",
         "keywords": "template testing",
@@ -28,7 +28,7 @@
     },
     {
         "utility": "Discord RPC",
-        "icon": "\\utility\\discordrpc\\icon.png",
+        "icon": "images\\discord-icon.png",
         "description": "Custom discord rich presence images, text and information",
         "redirect": "\\utility\\template\\index.html",
         "keywords": "discord rpc images text information",

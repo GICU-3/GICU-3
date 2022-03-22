@@ -83,7 +83,7 @@ function summonBar(inputJson) { // Reads the JSONdata and makes it magically app
 
 
         newImage = document.createElement("img");
-        newImage.src = root + "\\public" + obj.item.icon;
+        newImage.src = obj.item.icon;
         
         
         
