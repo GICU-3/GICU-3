@@ -1,0 +1,64 @@
+<style>
+  .mainwrap {
+            width: 500px;
+            display: block;
+            background: yellow;
+            height: auto;
+            overflow-x: scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .flexwrap {
+            zoom: 1;
+            display: flex;
+            flex-direction: row;
+            padding: 10px 5px;
+
+        }
+
+        .item {
+            width: 100px;
+            margin: 0 5px;
+            padding: 10px;
+            background: #bada55;
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: 1;
+            word-wrap: break-word;
+
+        }
+        .item--small {
+            flex-shrink: 1;
+            background: mediumvioletred;
+            width: 50px;
+        }
+</style>
+<div class="mainwrap">
+  <div class="flexwrap">
+      <div class="item item--small"><p>Loremlorem</p></div>
+      <div class="item"><p>Loremlorem</p></div>
+      <div class="item"><p>Loremlorem</p></div>
+      <div class="item"><p>Loremlorem</p></div>
+      <div class="item"><p>Loremlorem</p></div>
+      <div class="item"><p>Loremlorem</p></div>
+      <div class="item"><p>Loremlorem</p></div>
+      <div class="item"><p>Loremlorem</p></div>
+      <div class="item"><p>Loremlorem</p></div>
+      <div class="item"><p>Loremlorem</p></div>
+      <div class="item"><p>Loremlorem</p></div>
+      <div class="item"><p>Loremlorem</p></div>
+      <div class="item"><p>Loremlorem</p></div>
+
+  </div>
+</div>
+<script>
+  $("document").ready(function() {
+    $(".item").draggable({
+        helper: 'clone',
+        opacity: 0.8,
+        scroll: true,
+        refreshPositions: true,
+        scrollSensitivity: 100,
+    });
+});
+</script>

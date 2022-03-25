@@ -1,0 +1,139 @@
+
+/*Här är det mest om titlebar*/
+div#titlebar {
+
+
+    display: flex;
+    justify-content: space-between;
+    background: var(--titlebarcolor);
+    -webkit-app-region: drag;
+    box-shadow: 1px -1px 8px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 1px -1px 8px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px -1px 8px 0px rgba(0,0,0,0.75);
+}
+
+div#titlebar #window-buttons {
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-app-region: no-drag;
+}
+
+div#titlebar #window-buttons div {
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 2.8125rem;
+    height: 1.8125rem;
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+    transition: background 0.1s ease-in-out;
+    
+}
+#window-buttons div img{
+    filter:invert(100%);
+}
+div#titlebar #window-buttons div#close:hover {
+    background: var(--titlebarexitcolor);
+}
+div#titlebar #window-buttons div:hover {
+    background-color: var(--titlebartoolcolor);
+    
+    
+}
+
+
+
+/*Nu kommer buttons*/
+div#menubarContainer{
+    display:flex;
+    flex-direction: row;
+}
+
+div#menubarContainer{
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-app-region: no-drag;
+}
+div.menubarAContainer{
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: 1.8125rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: background 0.2s ease-in-out;
+}
+div.menubarAContainer a{
+    font-family: 'Inconsolata', monospace;
+    color: var(--titlebartextcolor);
+    text-decoration: none;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+div.menubarAContainer:hover{
+    background: var(--titlebartoolcolor);
+}
+
+.dropdown-content{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    background-color: var(--titlebarcolor);
+    min-width: 8rem;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+.dropdownMenubarAContainer{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 1.8125rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: background 0.2s ease-in-out;
+}
+div.menubarAContainer.dropdownMenu  div  div{
+    justify-content: flex-start;
+}
+.dropdownMenubarAContainer:hover{
+    background: var(--titlebartoolcolor);
+}
+div.menubarAContainer.dropdownMenu{
+    display: -webkit-box;
+}
+.dropdownMenu:hover .dropdown-content{
+    visibility:visible;
+    opacity: 1;
+}

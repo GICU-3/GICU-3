@@ -12,40 +12,26 @@
         .grid-stack-item-content { background-color: #18BC9C; }
         </style>
 
-        <div class="grid-stack"></div>
+        <div class="grid-stack">
+            <div class="grid-stack-item">
+                <div class="grid-stack-item-content"></div>
+            </div>
+            <div class="grid-stack-item">
+                <div class="grid-stack-item-content"></div>
+            </div>
+            <div class="grid-stack-item">
+                <div class="grid-stack-item-content"></div>
+            </div>
+            <div class="grid-stack-item">
+                <div class="grid-stack-item-content"></div>
+            </div>
+            <div class="grid-stack-item">
+                <div class="grid-stack-item-content"></div>
+            </div>
+        </div>
 
         <script type="text/javascript">
-        var items = [
-            {x:5, w:12, h:2, subGrid: {children: 
-                [
-                    {x:0, y:1, w:3},
-                    {x:3, y:1, w:3},
-                    {x:6, y:1, w:3},
-                    {x:9, y:1, w:3},
-
-                ]
-            }},
-            {x:5, w:12, h:1, subGrid: {children: 
-                [
-                    {x:0, y:1, w:3},
-                    {x:3, y:1, w:3},
-                    {x:6, y:1, w:3},
-                    {x:9, y:1, w:3},
-
-                ]
-            }},
-            {x:5, w:12, h:1, subGrid: {children: 
-                [
-                    {x:0, y:1, w:3},
-                    {x:3, y:1, w:3},
-                    {x:6, y:1, w:3},
-                    {x:9, y:1, w:3},
-
-                ]
-            }},
-        ];
-        var grid = GridStack.init();
-        grid.load(items);
+        GridStack.init();
         </script>
     </div>
 </body>

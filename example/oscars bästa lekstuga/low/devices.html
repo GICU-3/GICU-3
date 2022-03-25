@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+
+    <script defer src="js/navbar.js"></script>
+    <script defer src="js/debug.js"></script>
+    <script defer src="js/fetchdevices.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            
+            margin-left: 10px;
+            margin-right: 10px;
+            width: calc(100% - 20px);
+            box-sizing: border-box;
+            
+            max-height: 100px;
+            overflow: auto;
+        }
+
+        td,
+        th {
+            border: 2px solid var(--contentbackgroundcolor);
+            text-align: left;
+            padding: 3px;
+        }
+        
+        tr {
+            background-color: #979797;
+        }
+        tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+
+
+
+
+
+        .sendbutton {
+            width: calc(98% / 11) !important;
+            margin-right: 0px !important;
+        }
+
+        .ipportinputs {
+            margin-left: 0;
+            width: calc(98% / 11 * 2);
+            display: inline-block;
+            vertical-align: top;
+            border: 0;
+        }
+
+        #ipportinputs {
+            justify-content: space-between;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+
+            width: 100%;
+            text-align: left;
+            padding-top: 4px;
+            height: 34px;
+            padding-right: 10px;
+            padding-left: 10px;
+            padding-bottom: 4px;
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <header>
+        <!--Här ska navbar vara-->
+        <div id="titlebar">
+
+            <div id="menubarContainer">
+                <!--<div class="menubarAContainer"><a href="#">Control</a></div>
+                <div class="menubarAContainer"><a href="#">Devices</a></div>
+                <div class="menubarAContainer dropdownMenu">
+                    
+                    <a href="#">Settings</a>
+                    <div class="dropdown-content">
+                        <div class="dropdownMenubarAContainer"><a>Devices</a></div>
+                    </div>
+                </div>  -->
+            </div>
+
+            <div id="window-buttons">
+                <div class="minimise" id="minimise">
+                    <img src="images/windows-minimise.png" alt="">
+                </div>
+                <div id="windowed" fullscreen="1">
+                    <img id="windowed-fullscreen-button-img" src="images/windows-window.png" alt="">
+                </div>
+                <div class="close" id="close">
+                    <img src="images/windows-close.png" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!--Här kommer din body-->
+        <div class="contentBox">
+            <a style="margin:10px;color:var(--titlebartextcolor);">Wifi Devices</a>
+            <p id="WifiDevicesshowData"></p>
+            <div id="ipportinputs">
+                <input id="theip" class="ipportinputs" type="text" placeholder="Ip" aria-label="Ip">
+                <input id="theport" class="ipportinputs" type="text" placeholder="Port" aria-label="Port">
+                <select id="theledtype" class="ipportinputs">
+                    <option disabled selected>Led Type</option>
+                    <option value="rgb">rgb</option>
+                    <option value="rgbw">rgbw</option>
+                    <option value="argb">argb</option>
+                  </select>
+                <input id="theledcount" class="ipportinputs" type="text" placeholder="Led Count" aria-label="Led Count">
+                <input id="thedescription" class="ipportinputs" type="text" placeholder="Description" aria-label="Description">
+                <button style="cursor:pointer;" id="AddDeviceButton" class="ipportinputs sendbutton" type="button">Add</button>
+            </div>
+        </div>
+        <div class="contentBox">
+            <a style="margin:10px;color:var(--titlebartextcolor);">Peripheral</a>
+            <p id="showData"></p>
+        </div>
+    </main>
+    <footer>
+        <!--Här är sista delen-->
+
+    </footer>
+</body>
+
+</html>

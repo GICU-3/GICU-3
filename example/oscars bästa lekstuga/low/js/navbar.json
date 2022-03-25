@@ -1,0 +1,33 @@
+[{
+        "text": "Dashboard",
+        "redirect": "index.html"
+    },
+
+    {
+        "text": "Profiles",
+        "redirect": "profiles.html"
+    },
+
+    {
+        "text": "Devices",
+        "redirect": "devices.html"
+    },
+
+    {
+        "text": "Settings",
+        "redirect": "#",
+        "dropdown": [{
+                "text": "Scripts",
+                "redirect": "scripts.html"
+            },
+            {
+                "text": "Log",
+                "redirect": "log.html"
+            },
+            {
+                "text": "Testing",
+                "redirect": "testing.html"
+            }
+        ]
+    }
+]

@@ -1,0 +1,13 @@
+:root{
+    --bgcolor: linear-gradient(0deg, rgb(23, 25, 27) 0%, rgba(54,57,63,1) 48%, rgba(54,57,63,1) 100%);
+    --titlebarcolor: rgb(32, 33, 36);
+    --titlebarexitcolor: #E81123;/**/
+    --titlebartoolcolor: #37383A; 
+    --titlebartextcolor:#ecf0f1;
+
+    --contentbackgroundcolor: rgb(42, 43, 46);
+
+
+    --activedevice: #00FF00;
+    --inactivedevice: #FF0000;
+}
