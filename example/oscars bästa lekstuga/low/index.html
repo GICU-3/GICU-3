@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+
+    <script defer src="js/jquery.js"></script>
+    <script defer src="js/navbar.js"></script>
+    <script defer src="js/debug.js"></script>
+
+
+    <script src="js/Razer/ChromaSDKImpl.js"></script>
+    <script src="js/Razer/KeyboardEffects.js"></script>
+    <script src="js/Razer/MousematEffects.js"></script>
+    <script src="js/Razer/MouseEffects.js"></script>
+    <script src="js/Razer/HeadsetEffects.js"></script>
+    <script src="js/Razer/KeypadEffects.js"></script>
+    <script src="js/Razer/ChromaLinkEffects.js"></script>
+
+
+
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+
+    <script>
+        const sdk = require('cue-sdk');
+        var chromaSDK = new ChromaSDK();
+
+        var thecolor = [0, 255, 255];
+
+        window.onload = function initColorPicker() {
+
+            chromaSDK.init()
+
+            var canvasEl = document.getElementById('colorCanvas');
+            var canvasContext = canvasEl.getContext('2d');
+
+            var thehue = 180;
+            var saturationval = 1.3;
+            var hueshift = 0;
+
+            var rgba = 0;
+            var hslcolor = [0, 1, 0.5];
+            /*
+             document.getElementById("SendButton").style.background = "rgb(" + thecolor[0] + ", " + thecolor[1] +
+                 ", " + thecolor[2] + ")";
+                 */
+
+            var image = new Image(250, 250);
+            image.onload = () => canvasContext.drawImage(image, 0, 0, image.width, image.height);
+            image.src = "./js/colorpicker/colorwheel.png";
+            document.getElementById("colorCanvas").style.filter = "hue-rotate(" + (thehue - hueshift) +
+                "deg) saturate(" +
+                saturationval + ")";
+
+
+
+
+            canvasEl.onclick = function (mouseEvent) {
+                var imgData = canvasContext.getImageData(mouseEvent.offsetX, mouseEvent.offsetY, 1, 1);
+
+                canvasContext.arc(mouseEvent.offsetX, mouseEvent.offsetY, 5, 0, 2 * 3);
+
+
+                rgba = imgData.data;
+
+                hslcolor = rgbToHsl(rgba[0], rgba[1], rgba[2])
+
+                thecolor = hslToRgb(thehue / 360, hslcolor[1], hslcolor[2])
+
+
+                //thecolor = rgbToHsl(thecolor)
+                //console.log(thecolor);
+
+                document.getElementById("Hexinput").style.background = "rgb(" + thecolor[0] + ", " + thecolor[
+                    1] + ", " + thecolor[2] + ")";
+                document.getElementById("Hexinput").value = '#' + rgbToHex(thecolor[0], thecolor[1], thecolor[
+                    2]);;
+                synced();
+
+
+            }
+            document.getElementById("input-rangeSlider").oninput = function () {
+                thehue = document.getElementById("input-rangeSlider").value;
+                document.getElementById("colorCanvas").style.filter = "hue-rotate(" + (thehue - hueshift) +
+                    "deg) saturate(" + saturationval + ")";
+
+
+
+                thecolor = hslToRgb(thehue / 360, hslcolor[1], hslcolor[2])
+
+                //console.log(thecolor);
+
+
+                document.getElementById("Hexinput").style.background = "rgb(" + thecolor[0] + ", " + thecolor[
+                    1] + ", " + thecolor[2] + ")";
+                document.getElementById("Hexinput").value = '#' + rgbToHex(thecolor[0], thecolor[1], thecolor[
+                    2]);
+                if (document.getElementById("sendingActive").checked == true) {
+                    synced();
+                }
+            }
+            document.getElementById("input-rangeSlider").onchange = function () {
+                synced();
+            }
+
+            document.getElementById("Hexinput").onchange = function () {
+                if (document.getElementById("Hexinput").value.length == 7) {
+                    thecolor = hexToRgb(document.getElementById("Hexinput").value);
+                    sethue = Math.round(rgbToHsl(thecolor[0], thecolor[1], thecolor[2])[0] * 360)
+                    document.getElementById("colorCanvas").style.filter = "hue-rotate(" + (sethue - hueshift) +
+                        "deg) saturate(" + saturationval + ")";
+                    document.getElementById("input-rangeSlider").value = sethue;
+
+                    synced();
+                    document.getElementById("Hexinput").style.background = "rgb(" + thecolor[0] + ", " +
+                        thecolor[1] + ", " + thecolor[2] + ")";
+                    document.getElementById("Hexinput").value = '#' + rgbToHex(thecolor[0], thecolor[1],
+                        thecolor[2]);
+                }
+
+            }
+
+            const hexToRgb = hex =>
+                hex.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i, (m, r, g, b) => '#' + r + r + g + g + b + b)
+                .substring(1).match(/.{2}/g)
+                .map(x => parseInt(x, 16))
+
+
+            function rgbToHsl(r, g, b) {
+                r /= 255, g /= 255, b /= 255;
+                var max = Math.max(r, g, b),
+                    min = Math.min(r, g, b);
+                var h, s, l = (max + min) / 2;
+
+                if (max == min) {
+                    h = s = 0; // achromatic
+                } else {
+                    var d = max - min;
+                    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+                    switch (max) {
+                        case r:
+                            h = (g - b) / d + (g < b ? 6 : 0);
+                            break;
+                        case g:
+                            h = (b - r) / d + 2;
+                            break;
+                        case b:
+                            h = (r - g) / d + 4;
+                            break;
+                    }
+                    h /= 6;
+                }
+
+                return [h, s, l];
+            }
+
+        }
+
+
+
+        function hslToRgb(h, s, l) {
+            var r, g, b;
+
+            if (s == 0) {
+                r = g = b = l; // achromatic
+            } else {
+                var hue2rgb = function hue2rgb(p, q, t) {
+                    if (t < 0) t += 1;
+                    if (t > 1) t -= 1;
+                    if (t < 1 / 6) return p + (q - p) * 6 * t;
+                    if (t < 1 / 2) return q;
+                    if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
+                    return p;
+                }
+
+                var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+                var p = 2 * l - q;
+                r = hue2rgb(p, q, h + 1 / 3);
+                g = hue2rgb(p, q, h);
+                b = hue2rgb(p, q, h - 1 / 3);
+            }
+
+            return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+        }
+
+        function componentToHex(c) {
+            var hex = c.toString(16);
+            return hex.length == 1 ? "0" + hex : hex;
+        }
+
+        function rgbToHex(r, g, b) {
+            return componentToHex(r) + componentToHex(g) + componentToHex(b);
+        }
+
+        function synced() {
+
+            color = thecolor;
+
+            hexcolor = rgbToHex(color[2], color[1], color[0])
+            //console.log(hexcolor)
+            /*
+            chromaSDK.setEffect(chromaSDK.preCreateMouseEffect("CHROMA_STATIC", hexcolor));
+            chromaSDK.setEffect(chromaSDK.preCreateKeyboardEffect("CHROMA_STATIC", hexcolor));
+            chromaSDK.setEffect(chromaSDK.preCreateChromaLinkEffect("CHROMA_STATIC", hexcolor));
+            */
+            chromaSDK.setEffect(chromaSDK.preCreateMouseEffect("CHROMA_STATIC", Number('0x' + hexcolor)));
+            chromaSDK.setEffect(chromaSDK.preCreateKeyboardEffect("CHROMA_STATIC", Number('0x' + hexcolor)));
+            chromaSDK.setEffect(chromaSDK.preCreateChromaLinkEffect("CHROMA_STATIC", Number('0x' + hexcolor)));
+
+
+            const details = sdk.CorsairPerformProtocolHandshake();
+            const errCode = sdk.CorsairGetLastError();
+            if (errCode === 0) {
+                // 'CE_Success'
+            }
+            const n = sdk.CorsairGetDeviceCount();
+
+            for (let i = 0; i < n; ++i) {
+                const info = sdk.CorsairGetDeviceInfo(i);
+
+                // example: read device properties
+                if (info.capsMask & sdk.CorsairDeviceCaps.CDC_PropertyLookup) {
+                    //console.log(info);
+                    Object.keys(sdk.CorsairDevicePropertyId).forEach(p => {
+                        const prop = sdk.CorsairGetDeviceProperty(i, sdk.CorsairDevicePropertyId[p]);
+                        if (!prop) {
+                            //console.log(p, ':', sdk.CorsairErrorString[sdk.CorsairGetLastError()]);
+                        } else {
+                            //console.log(p, prop.value);
+                        }
+                    });
+                }
+
+                if (info.capsMask & sdk.CorsairDeviceCaps.CDC_Lighting) {
+                    const positions = sdk.CorsairGetLedPositionsByDeviceIndex(i);
+                    const maxX = positions.reduce((acc, curr) => Math.max(curr.left, acc), 0);
+                    // create red gradient
+                    const colors = positions.map(p => ({
+                        ledId: p.ledId,
+                        r: color[0],
+                        g: color[1],
+                        b: color[2]
+                    }));
+                    sdk.CorsairSetLedsColorsBufferByDeviceIndex(i, colors);
+                    sdk.CorsairSetLedsColorsFlushBuffer();
+                }
+            }
+        }
+    </script>
+
+
+    <style>
+        .slider {
+            margin: 0;
+            height: 15px;
+            width: 250px;
+            -webkit-appearance: none;
+            background: linear-gradient(90deg, rgba(255, 0, 0, 1) 0%, rgba(255, 255, 0, 1) 16.66%, rgba(0, 255, 0, 1) 33.32%, rgba(0, 255, 255, 1) 50%, rgba(0, 0, 255, 1) 66.66%, rgba(255, 0, 255, 1) 83.32%, rgba(255, 0, 0, 1) 100%);
+            outline: none;
+        }
+
+        .slider::-webkit-slider-thumb:hover {
+            opacity: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 5px;
+            height: 15px;
+            background: var(--bgcolor);
+            cursor: pointer;
+            opacity: 0.9;
+        }
+
+        .color-canvas {
+            outline: none;
+            user-select: none;
+        }
+
+        .inputBoxes {
+            width: 250px;
+            height: 30px;
+        }
+    </style>
+
+
+
+
+</head>
+
+<body>
+    <header>
+        <!--Här ska navbar vara-->
+        <div id="titlebar">
+
+            <div id="menubarContainer">
+                <!--<div class="menubarAContainer"><a href="#">Control</a></div>
+                <div class="menubarAContainer"><a href="#">Devices</a></div>
+                <div class="menubarAContainer dropdownMenu">
+                    
+                    <a href="#">Settings</a>
+                    <div class="dropdown-content">
+                        <div class="dropdownMenubarAContainer"><a>Devices</a></div>
+                    </div>
+                </div>  -->
+            </div>
+
+            <div id="window-buttons">
+                <div class="minimise" id="minimise">
+                    <img src="images/windows-minimise.png" alt="">
+                </div>
+                <div id="windowed" fullscreen="1">
+                    <img id="windowed-fullscreen-button-img" src="images/windows-window.png" alt="">
+                </div>
+                <div class="close" id="close">
+                    <img src="images/windows-close.png" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!--Här kommer din body-->
+        <div class="contentBox">
+            <a> Dashboard</a>
+        </div>
+        <div class="contentBox" style="width:270px;padding:10px;">
+            <a>Instant Lightning</a>
+            <canvas id="colorCanvas" class="color-canvas" width="250" height="250"></canvas>
+            <input id="input-rangeSlider" class="input-range slider" type="range" step="1" value="180" min="0"
+                max="360">
+            <div class="inputBoxes">
+                <input id="Hexinput" class="HexInput" type="text" placeholder="Hex Value" aria-label="Hex">
+                <input type="checkbox" id="sendingActive" name="sendingActive" value="true" onclick="synced();">
+            </div>
+            <!---
+            <div class="RGBButtons">
+                <input style="background: rgb(255, 0, 0);" id="Redinputs" class="RGBInput" type="text" placeholder="Red"
+                    aria-label="Red">
+                <input style="background: rgb(0, 221, 0);" id="Greeninputs" class="RGBInput" type="text"
+                    placeholder="Green" aria-label="Green">
+                <input style="background: rgb(0, 0, 255);" id="Blueinputs" class="RGBInput" type="text"
+                    placeholder="Blue" aria-label="Blue">
+                <button style="cursor:pointer;" id="SendButton" class="sendbutton RGBInput" type="button" onclick="synced();">Send</button>
+            </div>
+            --->
+        </div>
+        <span class="range-value"></span>
+    </main>
+    <footer>
+        <!--Här är sista delen-->
+
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+
+    <script defer src="js/navbar.js"></script>
+    <script defer src="js/debug.js"></script>
+
+    <script src="js/Razer/ChromaSDKImpl.js"></script>
+    <script src="js/Razer/KeyboardEffects.js"></script>
+    <script src="js/Razer/MousematEffects.js"></script>
+    <script src="js/Razer/MouseEffects.js"></script>
+    <script src="js/Razer/HeadsetEffects.js"></script>
+    <script src="js/Razer/KeypadEffects.js"></script>
+    <script src="js/Razer/ChromaLinkEffects.js"></script>
+
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/navbar.css">
+
+    <script>
+        const Chroma = require("razer-chroma-nodejs");
+        const sdk = require('cue-sdk');
+
+        var chromaSDK = new ChromaSDK();
+
+        function componentToHex(c) {
+            var hex = c.toString(16);
+            return hex.length == 1 ? "0" + hex : hex;
+        }
+
+        function rgbToHex(r, g, b) {
+            return '0x' + componentToHex(r) + componentToHex(g) + componentToHex(b);
+        }
+
+        function icuetest() {
+
+
+            const details = sdk.CorsairPerformProtocolHandshake();
+            const errCode = sdk.CorsairGetLastError();
+            if (errCode === 0) {
+                // 'CE_Success'
+            }
+            const n = sdk.CorsairGetDeviceCount();
+
+            for (let i = 0; i < n; ++i) {
+                const info = sdk.CorsairGetDeviceInfo(i);
+
+                // example: read device properties
+                if (info.capsMask & sdk.CorsairDeviceCaps.CDC_PropertyLookup) {
+                    console.log(info);
+                    Object.keys(sdk.CorsairDevicePropertyId).forEach(p => {
+                        const prop = sdk.CorsairGetDeviceProperty(i, sdk.CorsairDevicePropertyId[p]);
+                        if (!prop) {
+                            console.log(p, ':', sdk.CorsairErrorString[sdk.CorsairGetLastError()]);
+                        } else {
+                            console.log(p, prop.value);
+                        }
+                    });
+                }
+
+                if (info.capsMask & sdk.CorsairDeviceCaps.CDC_Lighting) {
+                    const positions = sdk.CorsairGetLedPositionsByDeviceIndex(i);
+                    const maxX = positions.reduce((acc, curr) => Math.max(curr.left, acc), 0);
+                    // create red gradient
+                    const colors = positions.map(p => ({
+                        ledId: p.ledId,
+                        r: Math.floor(Math.random() * 256),
+                        g: Math.floor(Math.random() * 256),
+                        b: Math.floor(Math.random() * 256)
+                    }));
+                    sdk.CorsairSetLedsColorsBufferByDeviceIndex(i, colors);
+                    sdk.CorsairSetLedsColorsFlushBuffer();
+                }
+            }
+        }
+
+        function razertest() {
+            chromaSDK.setEffect(chromaSDK.preCreateMouseEffect("CHROMA_STATIC", 0x00ff00));
+            chromaSDK.setEffect(chromaSDK.preCreateKeyboardEffect("CHROMA_STATIC", 0x00ff00));
+            chromaSDK.setEffect(chromaSDK.preCreateChromaLinkEffect("CHROMA_STATIC", 0x00ff00));
+
+        }
+
+        function razertest2() {
+            Chroma.effects.all.setColor(Chroma.colors.rgb(Math.floor(Math.random() * 256), Math.floor(Math.random() *
+                256), Math.floor(Math.random() * 256)));
+
+        }
+
+        function synced() {
+            color = [Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)];
+           
+            hexcolor = rgbToHex(color[2], color[1], color[0])
+            console.log(hexcolor)
+            /*
+            chromaSDK.setEffect(chromaSDK.preCreateMouseEffect("CHROMA_STATIC", hexcolor));
+            chromaSDK.setEffect(chromaSDK.preCreateKeyboardEffect("CHROMA_STATIC", hexcolor));
+            chromaSDK.setEffect(chromaSDK.preCreateChromaLinkEffect("CHROMA_STATIC", hexcolor));
+            */
+            chromaSDK.setEffect(chromaSDK.preCreateMouseEffect("CHROMA_STATIC", Number(hexcolor)));
+            chromaSDK.setEffect(chromaSDK.preCreateKeyboardEffect("CHROMA_STATIC", Number(hexcolor)));
+            chromaSDK.setEffect(chromaSDK.preCreateChromaLinkEffect("CHROMA_STATIC", Number(hexcolor)));
+
+
+            const details = sdk.CorsairPerformProtocolHandshake();
+            const errCode = sdk.CorsairGetLastError();
+            if (errCode === 0) {
+                // 'CE_Success'
+            }
+            const n = sdk.CorsairGetDeviceCount();
+
+            for (let i = 0; i < n; ++i) {
+                const info = sdk.CorsairGetDeviceInfo(i);
+
+                // example: read device properties
+                if (info.capsMask & sdk.CorsairDeviceCaps.CDC_PropertyLookup) {
+                    console.log(info);
+                    Object.keys(sdk.CorsairDevicePropertyId).forEach(p => {
+                        const prop = sdk.CorsairGetDeviceProperty(i, sdk.CorsairDevicePropertyId[p]);
+                        if (!prop) {
+                            console.log(p, ':', sdk.CorsairErrorString[sdk.CorsairGetLastError()]);
+                        } else {
+                            console.log(p, prop.value);
+                        }
+                    });
+                }
+
+                if (info.capsMask & sdk.CorsairDeviceCaps.CDC_Lighting) {
+                    const positions = sdk.CorsairGetLedPositionsByDeviceIndex(i);
+                    const maxX = positions.reduce((acc, curr) => Math.max(curr.left, acc), 0);
+                    // create red gradient
+                    const colors = positions.map(p => ({
+                        ledId: p.ledId,
+                        r: color[0],
+                        g: color[1],
+                        b: color[2]
+                    }));
+                    sdk.CorsairSetLedsColorsBufferByDeviceIndex(i, colors);
+                    sdk.CorsairSetLedsColorsFlushBuffer();
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body onload="chromaSDK.init()">
+    <header>
+        <!--Här ska navbar vara-->
+        <div id="titlebar">
+
+            <div id="menubarContainer">
+                <!--<div class="menubarAContainer"><a href="#">Control</a></div>
+                <div class="menubarAContainer"><a href="#">Devices</a></div>
+                <div class="menubarAContainer dropdownMenu">
+                    
+                    <a href="#">Settings</a>
+                    <div class="dropdown-content">
+                        <div class="dropdownMenubarAContainer"><a>Devices</a></div>
+                    </div>
+                </div>  -->
+            </div>
+
+            <div id="window-buttons">
+                <div class="minimise" id="minimise">
+                    <img src="images/windows-minimise.png" alt="">
+                </div>
+                <div id="windowed" fullscreen="1">
+                    <img id="windowed-fullscreen-button-img" src="images/windows-window.png" alt="">
+                </div>
+                <div class="close" id="close">
+                    <img src="images/windows-close.png" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!--Här kommer din body-->
+        <button style="cursor:pointer;" id="button1" class="ipportinputs sendbutton" type="button"
+            onclick="icuetest()">Icue</button>
+        <button style="cursor:pointer;" id="button1" class="ipportinputs sendbutton" type="button"
+            onclick="razertest()">Razer</button>
+        <button style="cursor:pointer;" id="button1" class="ipportinputs sendbutton" type="button"
+            onclick="razertest2()">Razer2</button>
+
+        <button style="cursor:pointer;" id="button1" class="ipportinputs sendbutton" type="button"
+            onclick="synced()">Synced</button>
+    </main>
+    <footer>
+        <!--Här är sista delen-->
+
+    </footer>
+</body>
+
+</html>

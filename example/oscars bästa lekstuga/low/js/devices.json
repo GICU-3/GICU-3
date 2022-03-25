@@ -1,0 +1,50 @@
+[
+    {
+        "ip": "192.168.1.102",
+        "port": "1010",
+        "led-type": "rgb",
+        "led-count": "100",
+        "description": "Fönsterruta",
+        "active": "true"
+    },
+    {
+        "ip": "192.168.1.108",
+        "port": "1010",
+        "led-type": "rgbw",
+        "led-count": "90",
+        "description": "Där borta",
+        "active": "false"
+    },
+    {
+        "ip": "192.168.1.111",
+        "port": "1010",
+        "led-type": "rgbw",
+        "led-count": "90",
+        "description": "Där borta",
+        "active": "true"
+    },
+    {
+        "ip": "192.168.1.124",
+        "port": "1010",
+        "led-type": "rgbw",
+        "led-count": "90",
+        "description": "Där borta",
+        "active": "true"
+    },
+    {
+        "ip": "192.168.1.17",
+        "port": "1010",
+        "led-type": "rgbw",
+        "led-count": "90",
+        "description": "Där borta",
+        "active": "false"
+    },
+    {
+        "ip": "172.0.0.4",
+        "port": "2020",
+        "led-type": "argb",
+        "led-count": "24",
+        "description": "Serern",
+        "active": "true"
+    }
+]
