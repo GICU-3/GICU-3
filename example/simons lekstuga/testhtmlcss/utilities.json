@@ -5,7 +5,8 @@
         "description": "Sorts json arrays alphabetically",
         "keywords": "json sort array alphabetically",
         "favourite": "false",
-        "number": "10"
+        "number": "10",
+        "Id":"1"
     },
     {
         "utility": "LOW",
@@ -13,7 +14,8 @@
         "description": "Light Over WIFI, Controls RGB lights over wifi",
         "keywords": "color wifi control",
         "favourite": "false",
-        "number": "1"
+        "number": "1",
+        "Id":"2"
     },
     {
         "utility": "Template",
@@ -21,7 +23,8 @@
         "description": "A template",
         "keywords": "template testing",
         "favourite": "false",
-        "number": "1"
+        "number": "1",
+        "Id":"3"
     },
     {
         "utility": "Discord RPC",
@@ -29,6 +32,7 @@
         "description": "Custom discord rich presence images, text and information",
         "keywords": "discord rpc images text information",
         "favourite": "false",
-        "number": "1"
+        "number": "1",
+        "Id":"4"
     }
 ]

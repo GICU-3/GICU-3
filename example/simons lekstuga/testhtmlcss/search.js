@@ -67,7 +67,7 @@ function summonAllEmpty() {
 
 function summonBar(inputJson) { // Reads the JSONdata and makes it magically appear under Search
     document.getElementById("searchResult").innerHTML = "";
-    inputJson.forEach(function (obj) {
+    inputJson.forEach(function (obj, i) {
         //console.log(obj);
         
         let newDiv = document.createElement("div");
@@ -77,6 +77,7 @@ function summonBar(inputJson) { // Reads the JSONdata and makes it magically app
 
         var root = process.cwd(); // Grab application directory
 
+        newDiv.className = i;
         newElement = document.createElement("a");
         newElement.innerHTML = obj.item.utility;
         newElement.style.display = "relative";
@@ -111,7 +112,7 @@ function summonBar(inputJson) { // Reads the JSONdata and makes it magically app
             newDiv.className = "aaaa favourite";
             console.log("here")
         }
-
+        newDiv.className = "aaaa";
 
         
         document.querySelector("#searchResult").appendChild(newDiv);
@@ -122,8 +123,13 @@ function summonBar(inputJson) { // Reads the JSONdata and makes it magically app
         
         contentDiv.appendChild(newElement);
         contentDivDescription.appendChild(newElementDescription);
+        var x = document.getElementsByClassName('aaaa');
+        x[i].id = obj.item.Id;                              //Ger ett id för varje sökbara element
+            
         
-
+        
+        console.log(obj.item.Id);
         console.log(obj.item.utility)
     });
+    
 }
