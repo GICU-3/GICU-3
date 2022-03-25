@@ -24,9 +24,13 @@ document.getElementById("search").onfocus = async function () {
 };
 document.getElementById("search").onblur = async function () {
     await sleep(100);
-    document.getElementById("searchResult").style.display = "none";
+    document.getElementById("searchResult").style.display = "block";
     console.log("offfocused");
+    if (document.getElementById("search").value == 0) {
+        document.getElementById("searchResult").style.display = "none";
+    }
 };
+
 function fuseSearch() {
     // 1. List of items to search in
     var books = JSON.parse(fs.readFileSync('utilities.json', 'utf8'));
@@ -87,12 +91,12 @@ function summonBar(inputJson) { // Reads the JSONdata and makes it magically app
         
         
         
-        newDiv.addEventListener("click", function() {window.location.href = root + '\\public' + obj.item.redirect;})
+        /*newDiv.addEventListener("click", function() {window.location.href = root + '\\public' + obj.item.redirect;})
         //newDiv.onClick = "console.log(yoo);";
         newDiv.className = "aaaa";
 
         console.log(root + '\\public' + obj.item.redirect);
-        //console.log(root + "/public" + obj.item.redirect)
+        //console.log(root + "/public" + obj.item.redirect)*/
         
 
         // Any Changes To Le Elements

@@ -1,22 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
-
+:root{
+    --color60: #e9ecef;
+    --color30: #CAF0F8;
+    --color10: #212529;
+}
 body{
     font-family: 'Ubuntu', sans-serif;
     margin: 0;
-    background-color: rgb(138, 138, 138);
+    background-color: var(--color60);
+    color: var(--color10);
     .navbar{
-        background-color: white;
+        background-color: var(--color30);
         padding: 0.5em;
+        border-bottom: 1px dashed;
         .home{
             margin: 0.5em;
             text-decoration: 0;
-            color: rgb(0, 180, 0);
+            color: var(--color10);
             font-weight: bold;
         }
         .labbar{
             text-decoration: 0;
             margin: 0.5em;
-            color: rgb(0, 180, 0);
+            color: var(--color10);
             font-weight: bold;
         }
     }
@@ -25,12 +31,12 @@ body{
         width: 50%;
         margin-top: 3em;
         border-radius: 1em;
+        border: 1px dashed;
         text-align: center;
         padding-bottom: 1em;
-        background-color: rgb(51, 51, 51);
-        color: white;
+        background-color: var(--color30);
         span{
-            color: rgb(0, 180, 0);
+            color: var(--color10);
         }
         font-size: 1.3em;
         input{

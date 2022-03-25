@@ -3,7 +3,6 @@
         "utility": "JSON Array Sorter",
         "icon": "\\utility\\json-sorter\\icon.png",
         "description": "Sorts json arrays alphabetically",
-        "redirect": "\\utility\\json-sorter\\index.html",
         "keywords": "json sort array alphabetically",
         "favourite": "false",
         "number": "10"
@@ -12,7 +11,6 @@
         "utility": "LOW",
         "icon": "\\utility\\LOW\\icon.png",
         "description": "Light Over WIFI, Controls RGB lights over wifi",
-        "redirect": "\\utility\\LOW\\index.html",
         "keywords": "color wifi control",
         "favourite": "false",
         "number": "1"
@@ -21,7 +19,6 @@
         "utility": "Template",
         "icon": "images\\template.jpg",
         "description": "A template",
-        "redirect": "\\utility\\template\\index.html",
         "keywords": "template testing",
         "favourite": "false",
         "number": "1"
@@ -30,7 +27,6 @@
         "utility": "Discord RPC",
         "icon": "images\\discord-icon.png",
         "description": "Custom discord rich presence images, text and information",
-        "redirect": "\\utility\\template\\index.html",
         "keywords": "discord rpc images text information",
         "favourite": "false",
         "number": "1"
