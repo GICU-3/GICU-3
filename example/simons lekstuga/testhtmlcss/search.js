@@ -25,9 +25,9 @@ document.getElementById("search").onfocus = async function () {
 document.getElementById("search").onblur = async function () {
     await sleep(100);
     document.getElementById("searchResult").style.display = "block";
-    console.log("offfocused");
     if (document.getElementById("search").value == 0) {
         document.getElementById("searchResult").style.display = "none";
+        console.log("offfocused");
     }
 };
 
