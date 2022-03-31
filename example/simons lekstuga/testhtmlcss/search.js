@@ -3,18 +3,18 @@ const fs = require('fs')
 
 function sleep(ms) {
     return new Promise((resolve) => {
-      setTimeout(resolve, ms);
+        setTimeout(resolve, ms);
     });
-  }  
+}
 
-document.getElementById("search").onkeyup = function () {
+document.getElementById("search").onkeyup = function() {
     fuseSearch()
     if (!document.getElementById("search").value) {
         summonAllEmpty();
     }
 };
 
-document.getElementById("search").onfocus = async function () {
+document.getElementById("search").onfocus = async function() {
     document.getElementById("searchResult").style.display = "block";
     //console.log("focused");
 
@@ -22,7 +22,7 @@ document.getElementById("search").onfocus = async function () {
         summonAllEmpty();
     }
 };
-document.getElementById("search").onblur = async function () {
+document.getElementById("search").onblur = async function() {
     await sleep(100);
     document.getElementById("searchResult").style.display = "block";
     if (document.getElementById("search").value == 0) {
@@ -37,7 +37,7 @@ function fuseSearch() {
 
     const options = {
         threshold: 0.0
-      }
+    }
 
     // 2. Set up the Fuse instance
     const fuse = new Fuse(books, {
@@ -53,23 +53,23 @@ function fuseSearch() {
 
 function summonAllEmpty() {
     var books = JSON.parse(fs.readFileSync('utilities.json', 'utf8'));
-        let booksOutput =[];
-        books.forEach(function (obj) {
-            let booksAfter = {};
-            booksAfter.item = obj;
+    let booksOutput = [];
+    books.forEach(function(obj) {
+        let booksAfter = {};
+        booksAfter.item = obj;
 
-             booksOutput.push(booksAfter);
-            
-        });
-        //console.log(booksOutput);
-        summonBar(booksOutput);
+        booksOutput.push(booksAfter);
+
+    });
+    //console.log(booksOutput);
+    summonBar(booksOutput);
 }
 
 function summonBar(inputJson) { // Reads the JSONdata and makes it magically appear under Search
     document.getElementById("searchResult").innerHTML = "";
-    inputJson.forEach(function (obj, i) {
+    inputJson.forEach(function(obj, i) {
         //console.log(obj);
-        
+
         let newDiv = document.createElement("div");
         let contentDiv = document.createElement("div");
         let contentDivDescription = document.createElement("div");
@@ -89,19 +89,19 @@ function summonBar(inputJson) { // Reads the JSONdata and makes it magically app
 
         newImage = document.createElement("img");
         newImage.src = obj.item.icon;
-        
-        
-        
+
+
+
         /*newDiv.addEventListener("click", function() {window.location.href = root + '\\public' + obj.item.redirect;})
         //newDiv.onClick = "console.log(yoo);";
         newDiv.className = "aaaa";
 
         console.log(root + '\\public' + obj.item.redirect);
         //console.log(root + "/public" + obj.item.redirect)*/
-        
+
 
         // Any Changes To Le Elements
-        
+
         contentDiv.className = "searchContentDiv";
         contentDivDescription.className = "searchContentDivDescription";
 
@@ -114,22 +114,26 @@ function summonBar(inputJson) { // Reads the JSONdata and makes it magically app
         }
         newDiv.className = "aaaa";
 
-        
+
         document.querySelector("#searchResult").appendChild(newDiv);
 
         newDiv.appendChild(contentDiv);
         newDiv.appendChild(newImage);
         newDiv.appendChild(contentDivDescription);
-        
+
         contentDiv.appendChild(newElement);
         contentDivDescription.appendChild(newElementDescription);
-        var x = document.getElementsByClassName('aaaa');
-        x[i].id = obj.item.Id;                              //Ger ett id för varje sökbara element
-            
-        
-        
-        console.log(obj.item.Id);
+        var class_id = document.getElementsByClassName('aaaa');
+        class_id[i].id = obj.item.Id; //Ger ett id för varje sökbara element
+
+        var element_id = document.getElementById(class_id[i].id);
+        element_id.addEventListener("click", sayhello);
+
+        function sayhello() {
+            console.log("ID:" + class_id[i].id);
+        }
+
         console.log(obj.item.utility)
     });
-    
+
 }
