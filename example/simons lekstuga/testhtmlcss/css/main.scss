@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
 :root{
-    --color60: #e9ecef;
+    --color60: #2d2d2d;
     --color30: #CAF0F8;
     --color10: #212529;
 }
@@ -8,36 +8,39 @@ body{
     font-family: 'Ubuntu', sans-serif;
     margin: 0;
     background-color: var(--color60);
-    color: var(--color10);
+    background-image: url('C:/Users/Deltagare/Desktop/GICU-3/example/simons lekstuga/testhtmlcss/images/main-background.jpg');
+    background-size: cover;
     .navbar{
-        background-color: var(--color30);
+        background: none;
         padding: 0.5em;
-        border-bottom: 1px dashed;
-        .home{
-            margin: 0.5em;
-            text-decoration: 0;
-            color: var(--color10);
-            font-weight: bold;
-        }
-        .labbar{
-            text-decoration: 0;
-            margin: 0.5em;
-            color: var(--color10);
-            font-weight: bold;
+        .container{
+            //text-align: center;
+            display: flex;
+            justify-content: space-evenly;
+            a{
+                text-decoration: 0;
+                color: white;
+                font-weight: bold;
+            }
         }
     }
     .searchbar{
+        h1{
+            color: white;
+        }
+        span{
+            color: #8becff;
+        }
+        h2{
+            color: white;
+        }
         margin: auto;
         width: 50%;
-        margin-top: 3em;
+        margin-top: 0;
         border-radius: 1em;
-        border: 1px dashed;
+        //border: 2px solid black;
         text-align: center;
-        padding-bottom: 1em;
-        background-color: var(--color30);
-        span{
-            color: var(--color10);
-        }
+        background: none;
         font-size: 1.3em;
         input{
             display: inline;
@@ -63,12 +66,14 @@ body{
         }*/
     }
     .searchContentDiv {
-        border: 1px dashed rgb(255, 255, 255);
-        background: var(--titlebarcolor);
+        background-color: #8becff;
         height: 25px;
+        display: flex;
+        padding: 10px;
+        //border-bottom: 1px solid var(--color10);
+        border-radius: 10px;
     }
     .searchContentDivDescription {
-        background: var(--contentbackgroundcolor);
         height: 50px;
         width: 50%;
         //margin-left: 96px;
@@ -87,15 +92,25 @@ body{
     
     
     #searchResult > div {
+        border-radius: 10px;
+        margin-top: 15px;
+        margin-bottom: 15px;
         width: auto;
-        height: 121px;
-        background: var(--titlebarcolor);
+        height: 160px;
+        background: var(--color30);
         //overflow: hidden;
+        margin-right: 15px;
     }
     
     #searchResult img {
         width: auto;
         height: 48px;
         background: var(--titlebarcolor);
+        border-radius: 10px;
+    }
+    #searchResult {
+        background: none;
+        height: 360px;
+        overflow-y: auto;
     }
 }

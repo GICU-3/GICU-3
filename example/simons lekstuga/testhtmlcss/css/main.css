@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
 :root {
-  --color60: #e9ecef;
+  --color60: #2d2d2d;
   --color30: #CAF0F8;
   --color10: #212529;
 }
@@ -9,40 +9,38 @@ body {
   font-family: 'Ubuntu', sans-serif;
   margin: 0;
   background-color: var(--color60);
-  color: var(--color10);
+  background-image: url("C:/Users/Deltagare/Desktop/GICU-3/example/simons lekstuga/testhtmlcss/images/main-background.jpg");
+  background-size: cover;
 }
 
 body .navbar {
-  background-color: var(--color30);
+  background: none;
   padding: 0.5em;
-  border-bottom: 1px dashed;
 }
 
-body .navbar .home {
-  margin: 0.5em;
-  -webkit-text-decoration: 0;
-          text-decoration: 0;
-  color: var(--color10);
-  font-weight: bold;
+body .navbar .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
-body .navbar .labbar {
+body .navbar .container a {
   -webkit-text-decoration: 0;
           text-decoration: 0;
-  margin: 0.5em;
-  color: var(--color10);
+  color: white;
   font-weight: bold;
 }
 
 body .searchbar {
   margin: auto;
   width: 50%;
-  margin-top: 3em;
+  margin-top: 0;
   border-radius: 1em;
-  border: 1px dashed;
   text-align: center;
-  padding-bottom: 1em;
-  background-color: var(--color30);
+  background: none;
   font-size: 1.3em;
   /*.button{
             height: 2.2em;
@@ -59,8 +57,16 @@ body .searchbar {
         }*/
 }
 
+body .searchbar h1 {
+  color: white;
+}
+
 body .searchbar span {
-  color: var(--color10);
+  color: #8becff;
+}
+
+body .searchbar h2 {
+  color: white;
 }
 
 body .searchbar input {
@@ -75,13 +81,16 @@ body .searchbar .search {
 }
 
 body .searchContentDiv {
-  border: 1px dashed white;
-  background: var(--titlebarcolor);
+  background-color: #8becff;
   height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 body .searchContentDivDescription {
-  background: var(--contentbackgroundcolor);
   height: 50px;
   width: 50%;
   position: relative;
@@ -95,14 +104,25 @@ body .searchContentDivDescription a {
 }
 
 body #searchResult > div {
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   width: auto;
-  height: 121px;
-  background: var(--titlebarcolor);
+  height: 160px;
+  background: var(--color30);
+  margin-right: 15px;
 }
 
 body #searchResult img {
   width: auto;
   height: 48px;
   background: var(--titlebarcolor);
+  border-radius: 10px;
+}
+
+body #searchResult {
+  background: none;
+  height: 360px;
+  overflow-y: auto;
 }
 /*# sourceMappingURL=main.css.map */

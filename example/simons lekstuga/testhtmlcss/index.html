@@ -9,12 +9,40 @@
         <script defer src="search.js"></script>
         <script defer src="onclick.js"></script>
         <!-- <script defer src="index.js"></script> -->
+        <style>
+            ::-webkit-scrollbar {
+                width: 18px;
+            }
+
+            /* Track */
+            ::-webkit-scrollbar-track {
+                background: rgba(241, 241, 241, 0.2);
+                border-radius: 5px;
+            }
+ 
+            /* Handle */
+            ::-webkit-scrollbar-thumb {
+                background: #888; 
+                border: 2px solid rgba(241, 241, 241, 0.2);
+                border-radius: 5px;
+            }
+
+            /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+                background: #555; 
+            }
+            ::-webkit-scrollbar-track-piece {
+                width: 50%;
+            }
+        </style>
     </head>
     <body>
         <nav class="navbar">
             <div class="container">
+                <a class="inställningar" id="inställningar" href="#">Inställningar</a>
                 <a class="home" id="home" href="#">Home</a>
                 <a class="labbar" id="labbar" href="#">Labbar</a>
+                <a class="admin" id="admin" href="#">Admin</a>
             </div>
         </nav>
         <section class="searchbar">
