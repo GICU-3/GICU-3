@@ -1,15 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
 :root {
   --color60: #2d2d2d;
-  --color30: #CAF0F8;
+  --color30: #9ea6a8;
   --color10: #212529;
+  --colorx: #e7e7e7;
 }
 
 body {
   font-family: 'Ubuntu', sans-serif;
   margin: 0;
   background-color: var(--color60);
-  background-image: url("C:/Users/Deltagare/Desktop/GICU-3/example/simons lekstuga/testhtmlcss/images/main-background.jpg");
+  background-image: url("../images/main-background.jpg");
   background-size: cover;
 }
 
@@ -62,7 +63,7 @@ body .searchbar h1 {
 }
 
 body .searchbar span {
-  color: #8becff;
+  color: var(--colorx);
 }
 
 body .searchbar h2 {
@@ -81,7 +82,7 @@ body .searchbar .search {
 }
 
 body .searchContentDiv {
-  background-color: #8becff;
+  background-color: var(--colorx);
   height: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
