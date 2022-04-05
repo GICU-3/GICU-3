@@ -69,9 +69,9 @@ body{
     .searchContentDiv {
         background-color: var(--colorx);
         height: 25px;
+        justify-content: left;
         display: flex;
         padding: 10px;
-        //border-bottom: 1px solid var(--color10);
         border-radius: 10px;
     }
     .searchContentDivDescription {
@@ -101,6 +101,11 @@ body{
         background: var(--color30);
         //overflow: hidden;
         margin-right: 15px;
+        .container{
+            display: flex;
+            justify-content: space-evenly;
+            padding-top: 30px;
+        }
     }
     
     #searchResult img {
@@ -114,4 +119,9 @@ body{
         height: 360px;
         overflow-y: auto;
     }
+}
+
+div:focus{
+    font-weight: bold;
+    height: 240px;
 }

@@ -73,6 +73,7 @@ function summonBar(inputJson) { // Reads the JSONdata and makes it magically app
         let newDiv = document.createElement("div");
         let contentDiv = document.createElement("div");
         let contentDivDescription = document.createElement("div");
+        let contentcontainer = document.createElement("div");
         //newDiv.className = "menubarAContainer";
 
         var root = process.cwd(); // Grab application directory
@@ -92,12 +93,14 @@ function summonBar(inputJson) { // Reads the JSONdata and makes it magically app
         contentDiv.className = "searchContentDiv";
         contentDivDescription.className = "searchContentDivDescription";
         newDiv.className = "aaaa";
+        contentcontainer.className = "container";
 
         document.querySelector("#searchResult").appendChild(newDiv);
 
+        contentcontainer.appendChild(contentDivDescription);
+        contentcontainer.appendChild(newImage);
         newDiv.appendChild(contentDiv);
-        newDiv.appendChild(newImage);
-        newDiv.appendChild(contentDivDescription);
+        newDiv.appendChild(contentcontainer);
 
         contentDiv.appendChild(newElement);
         contentDivDescription.appendChild(newElementDescription);
@@ -105,12 +108,16 @@ function summonBar(inputJson) { // Reads the JSONdata and makes it magically app
         class_id[i].id = obj.item.Id; //Ger ett id för varje sökbara element
 
         var element_id = document.getElementById(class_id[i].id);
-        element_id.addEventListener("click", sayhello);
+        document.getElementById(class_id[i].id).tabIndex = 0;
 
+        element_id.addEventListener("click", sayhello); //säger vilket id div tillhör
         function sayhello() {
             console.log("ID:" + class_id[i].id);
         }
-
+        /*if (element_id !== sayhello().target && !element_id.contains(sayhello().target)) {    
+            console.log('clicking outside the div');
+            element_id.style.height == "160px";
+        }*/
         console.log(obj.item.utility)
     });
 
