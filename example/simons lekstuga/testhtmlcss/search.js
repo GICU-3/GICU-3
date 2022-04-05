@@ -86,34 +86,12 @@ function summonBar(inputJson) { // Reads the JSONdata and makes it magically app
         newElementDescription.innerHTML = obj.item.description;
         newElementDescription.style.display = "relative";
 
-
         newImage = document.createElement("img");
         newImage.src = obj.item.icon;
 
-
-
-        /*newDiv.addEventListener("click", function() {window.location.href = root + '\\public' + obj.item.redirect;})
-        //newDiv.onClick = "console.log(yoo);";
-        newDiv.className = "aaaa";
-
-        console.log(root + '\\public' + obj.item.redirect);
-        //console.log(root + "/public" + obj.item.redirect)*/
-
-
-        // Any Changes To Le Elements
-
         contentDiv.className = "searchContentDiv";
         contentDivDescription.className = "searchContentDivDescription";
-
-
-        if (obj.item.favourite == "true") {
-            contentDiv.className = "searchContentDiv favourite";
-            newImage.className = "favourite";
-            newDiv.className = "aaaa favourite";
-            console.log("here")
-        }
         newDiv.className = "aaaa";
-
 
         document.querySelector("#searchResult").appendChild(newDiv);
 

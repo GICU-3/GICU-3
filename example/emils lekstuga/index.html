@@ -6,7 +6,7 @@
     dataFile:[]
 };
  
-function readImage(input) {
+/*function readImage(input) {
     console.log(input)
  if (input.files && input.files[0]) {
  let reader = new FileReader();
@@ -18,8 +18,8 @@ function readImage(input) {
             console.log(obj_csv.dataFile)
             parseData(obj_csv.dataFile)
             
- }
- }
+        }
+    }
 }
  
 function parseData(data){
@@ -29,5 +29,12 @@ function parseData(data){
         csvData.push(res.split(";"));
     });
     console.table(csvData);
+    document.write(csvData);
 }
+*/
+
+csvToJson = require('convert-csv-to-json');
+csvToJson.generateJsonFileFromCsv(component_database.csv,output.json)
+document.write(output.json);
+
 </script>

@@ -4,8 +4,6 @@
         "icon": "\\utility\\json-sorter\\icon.png",
         "description": "Sorts json arrays alphabetically",
         "keywords": "json sort array alphabetically",
-        "favourite": "false",
-        "number": "10",
         "Id":"1"
     },
     {
@@ -13,8 +11,6 @@
         "icon": "\\utility\\LOW\\icon.png",
         "description": "Light Over WIFI, Controls RGB lights over wifi",
         "keywords": "color wifi control",
-        "favourite": "false",
-        "number": "1",
         "Id":"2"
     },
     {
@@ -22,8 +18,6 @@
         "icon": "images\\template.jpg",
         "description": "A template",
         "keywords": "template testing",
-        "favourite": "false",
-        "number": "1",
         "Id":"3"
     },
     {
@@ -31,8 +25,13 @@
         "icon": "images\\discord-icon.png",
         "description": "Custom discord rich presence images, text and information",
         "keywords": "discord rpc images text information",
-        "favourite": "false",
-        "number": "1",
         "Id":"4"
+    },
+    {
+        "utility": "Summer",
+        "icon": "images\\summer.png",
+        "description": "Komponent som gör ett förjävligt oväsen. Används bland annat i det fantastiska spelet Athletic Socks (Atletiska strumpor)",
+        "keywords": "summer sommar ljud oväsen",
+        "Id":"5"
     }
 ]
