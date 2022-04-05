@@ -1,16 +1,25 @@
 [
     {
         "utility": "JSON Array Sorter",
-        "icon": "\\utility\\json-sorter\\icon.png",
+        "icon": "",
         "description": "Sorts json arrays alphabetically",
         "keywords": "json sort array alphabetically",
         "Id":"1"
     },
     {
+<<<<<<< HEAD
         "utility": "LOW",
         "icon": "\\utility\\LOW\\icon.png",
         "description": "Light Over WIFI, Controls RGB lights over wifi",
         "keywords": "color wifi control",
+=======
+        "utility": "POT 10.000 Ohm",
+        "icon": "images\\POT 10.000 Ohm.jpg",
+        "description": "Potentiometer with a max resistance of 10.000 Ohms",
+        "keywords": "pot potentiometer meter 10.000 10000 10 000 ohm",
+        "favourite": "false",
+        "number": "1",
+>>>>>>> 24ec0a66875f7d6e575df92045fa61d6d5d96409
         "Id":"2"
     },
     {
