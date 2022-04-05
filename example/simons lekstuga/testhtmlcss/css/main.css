@@ -115,6 +115,7 @@ body #searchResult > div {
   height: 160px;
   background: var(--color30);
   margin-right: 15px;
+  margin-left: 15px;
 }
 
 body #searchResult > div .container {

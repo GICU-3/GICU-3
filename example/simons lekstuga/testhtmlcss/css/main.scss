@@ -91,7 +91,6 @@ body{
         left:0px;
     }
     
-    
     #searchResult > div {
         border-radius: 10px;
         margin-top: 15px;
@@ -101,11 +100,15 @@ body{
         background: var(--color30);
         //overflow: hidden;
         margin-right: 15px;
+<<<<<<< HEAD
         .container{
             display: flex;
             justify-content: space-evenly;
             padding-top: 30px;
         }
+=======
+        margin-left: 15px;
+>>>>>>> d5ce6fa55cec2d24479972a149419e8178e01470
     }
     
     #searchResult img {
@@ -113,6 +116,7 @@ body{
         height: 48px;
         background: var(--titlebarcolor);
         border-radius: 10px;
+        
     }
     #searchResult {
         background: none;
