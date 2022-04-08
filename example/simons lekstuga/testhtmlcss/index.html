@@ -54,7 +54,7 @@
     <body>
         <nav class="navbar">
             <div class="container">
-                <a class="inställningar" id="inställningar" data-toggle="modal" data-target="#myModal">Inställningar</a>
+                <a class="inställningar" id="inställningar" href="#">Inställningar</a>
                 <a class="home" id="home" href="#">Home</a>
                 <a class="labbar" id="labbar" href="#">Labbar</a>
                 <a class="admin" id="admin" href="#">Admin</a>
@@ -63,6 +63,7 @@
 
         <!-- BOOTSTRAP MODAL -->
         <div class="container">
+          
             <!-- The Modal -->
             <div class="modal fade" id="myModal">
               <div class="modal-dialog modal-lg">
@@ -70,40 +71,36 @@
                 
                   <!-- Modal Header -->
                   <div class="modal-header">
-                    <h4 class="modal-title">Inställningar</h4>
+                    <h4 class="modal-title">Modal Heading</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                   </div>
                   
                   <!-- Modal body -->
                   <div class="modal-body">
-                      <!-- Default switch -->
-                      <div class="custom-control custom-switch settingsPadding">
-                        <input type="checkbox" class="custom-control-input" id="switchDarkmode">
-                        <label class="custom-control-label settingsControlLabel" for="switchDarkmode">Darkmode</label>
-                      </div>
-
-                      <div class="custom-control custom-switch settingsPadding">
-                        <input type="checkbox" class="custom-control-input" id="switchOther">
-                        <label class="custom-control-label" for="switchOther">Annan skum inställning</label>
-                      </div>
+                    Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...
                   </div>
                   
                   <!-- Modal footer -->
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Stäng</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                   </div>
+                  
                 </div>
               </div>
             </div>
           </div>
           <!-- BOOTSTRAP MODAL END -->
-
-        <section class="searchbar">
+      <section class="bodySection">
+        <div class="searchbar">
             <h1>GICU-<span>3</span></h1>
             <h2>Sök databas</h2>
             <input id="search" class="search" type="text" placeholder="enter component name or keyword">
             <!-- <input class="button" type="button" value="Search"> -->
             <div id="searchResult"></div>
-        </section>
+        </div>
+        <div id="searchHistory">
+          <div class="searchHistoryTitle">Aktiva Sökningar</div>
+        </div>
+      </section>
     </body>
 </html> 

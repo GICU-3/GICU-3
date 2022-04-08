@@ -1,5 +1,6 @@
 const Fuse = require('fuse.js')
-const fs = require('fs')
+const fs = require('fs');
+const { runInContext } = require('vm');
 
 function sleep(ms) {
     return new Promise((resolve) => {
@@ -24,6 +25,7 @@ document.getElementById("search").onfocus = async function() {
 };
 document.getElementById("search").onblur = async function() {
     await sleep(100);
+    add();
     document.getElementById("searchResult").style.display = "block";
     if (document.getElementById("search").value == 0) {
         document.getElementById("searchResult").style.display = "none";
@@ -33,6 +35,7 @@ document.getElementById("search").onblur = async function() {
 
 function fuseSearch() {
     // 1. List of items to search in
+    add();
     var books = JSON.parse(fs.readFileSync('utilities.json', 'utf8'));
 
     const options = {
@@ -108,11 +111,30 @@ function summonBar(inputJson) { // Reads the JSONdata and makes it magically app
         class_id[i].id = obj.item.Id; //Ger ett id för varje sökbara element
 
         var element_id = document.getElementById(class_id[i].id);
-        document.getElementById(class_id[i].id).tabIndex = 0;
 
         element_id.addEventListener("click", sayhello); //säger vilket id div tillhör
+
         function sayhello() {
-            console.log("ID:" + class_id[i].id);
+            var selected = document.querySelectorAll(".chosen");
+            let r = document.createElement("div");
+            let image = document.createElement("img");
+            image.src = "images/cross.svg";
+            r.className = "chosen"
+            document.querySelector("#searchHistory").appendChild(r);
+            r.innerHTML = obj.item.utility;
+            r.id = "chosen" + obj.item.Id;
+            selected.forEach(function(div, e) {
+                var a = document.getElementsByClassName("chosen")
+                var b = document.getElementById(a[e].id)
+                //console.log(a[e].id);
+                //console.log(r.id);
+                if (r.id == a[e].id) {
+                    console.log("test")
+                    try { b.parentNode.removeChild(b) } catch {};
+                }
+            })
+            searchHistory.appendChild(r);
+            r.appendChild(image);
         }
         /*if (element_id !== sayhello().target && !element_id.contains(sayhello().target)) {    
             console.log('clicking outside the div');
@@ -120,5 +142,20 @@ function summonBar(inputJson) { // Reads the JSONdata and makes it magically app
         }*/
         console.log(obj.item.utility)
     });
+}
 
+function add() {
+    var selected = document.querySelectorAll(".chosen");
+
+    selected.forEach(function(div, i) {
+        var a = document.getElementsByClassName("chosen")
+        var b = document.getElementById(a[i].id)
+        //let parent = document.querySelector(".chosen");
+        b.addEventListener("click", remove);
+        console.log(selected[i]);
+
+        function remove() {
+            try { b.parentNode.removeChild(b)} catch {};
+        }
+    })
 }

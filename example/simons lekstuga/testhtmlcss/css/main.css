@@ -1,9 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
 :root {
   --color60: #2d2d2d;
-  --color30: #d9d9d9;
-  --color10: #212529;
-  --colorx: #a3c4cb;
+  --color30: #f0f0f0;
+  --color10: #a3c4cb;
 }
 
 body {
@@ -12,11 +11,6 @@ body {
   background-color: var(--color60);
   background-image: url("../images/main-background.jpg");
   background-size: cover;
-  /* Positioning the enlarged switch */
-  /* Sync the animation for switch knob */
-  /* Enlarge and position the switch knob */
-  /* Enlarge and position the switch socket */
-  /*padding below switch*/
 }
 
 body .navbar {
@@ -41,8 +35,8 @@ body .navbar .container a {
 }
 
 body .searchbar {
-  margin: auto;
-  width: 50%;
+  margin-left: 256px;
+  width: 512px;
   margin-top: 0;
   border-radius: 1em;
   text-align: center;
@@ -68,7 +62,7 @@ body .searchbar h1 {
 }
 
 body .searchbar span {
-  color: var(--colorx);
+  color: var(--color10);
 }
 
 body .searchbar h2 {
@@ -84,58 +78,38 @@ body .searchbar .search {
   height: 2em;
   border-radius: 0.4em;
   margin-bottom: 1em;
+  background-color: var(--color30);
 }
 
 body .searchContentDiv {
-  background-color: var(--colorx);
-  height: 25px;
+  background-color: var(--color10);
+  height: 45px;
   -webkit-box-pack: left;
       -ms-flex-pack: left;
           justify-content: left;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 10px;
+  padding-left: 10px;
   border-radius: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .searchContentDivDescription {
-  height: 50px;
   width: 50%;
   position: relative;
   font-size: 12px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .searchContentDivDescription a {
   position: relative;
   width: 150px;
   left: 0px;
-}
-
-body .custom-switch > .custom-control-label {
-  padding-left: 1.75rem;
-  padding-bottom: 0.5rem;
-}
-
-body .custom-switch > .custom-control-input:checked ~ .custom-control-label::after {
-  -webkit-transform: scale(2) translateX(0.75rem);
-  transform: scale(2) translateX(0.75rem);
-}
-
-body .custom-switch > .custom-control-label::after {
-  left: -1.75rem;
-  -webkit-transform: scale(2);
-          transform: scale(2);
-}
-
-body .custom-switch > .custom-control-label::before {
-  left: -1.50rem;
-  -webkit-transform: scale(2);
-          transform: scale(2);
-}
-
-body .settingsPadding {
-  padding-bottom: 15px;
 }
 
 body #searchResult > div {
@@ -146,7 +120,19 @@ body #searchResult > div {
   height: 160px;
   background: var(--color30);
   margin-right: 15px;
-  margin-left: 15px;
+}
+
+body #searchResult > div .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding-top: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body #searchResult img {
@@ -162,8 +148,54 @@ body #searchResult {
   overflow-y: auto;
 }
 
-div:focus {
+body .bodySection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .bodySection #searchHistory {
+  background-color: rgba(45, 45, 45, 0.5);
+  margin-left: 56px;
+  margin-top: 110px;
+  width: 200px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  height: 400px;
+  overflow-y: auto;
+}
+
+body .bodySection #searchHistory .searchHistoryTitle {
+  color: white;
+  margin-bottom: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: white 1px solid;
   font-weight: bold;
-  height: 240px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .bodySection #searchHistory .chosen {
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+}
+
+body .bodySection #searchHistory .chosen img {
+  height: 30px;
+  padding-left: 10px;
+  padding-right: 30px;
+  width: auto;
+  -webkit-filter: invert(100%) sepia(30%) saturate(80%) hue-rotate(157deg) brightness(104%) contrast(101%);
+          filter: invert(100%) sepia(30%) saturate(80%) hue-rotate(157deg) brightness(104%) contrast(101%);
 }
 /*# sourceMappingURL=main.css.map */
