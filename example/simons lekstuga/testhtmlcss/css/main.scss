@@ -90,7 +90,31 @@ body{
         width: 150px;
         left:0px;
     }
-    
+    /* Positioning the enlarged switch */
+    .custom-switch > .custom-control-label {
+        padding-left: 1.75rem;
+        padding-bottom: 0.5rem;
+    }
+    /* Sync the animation for switch knob */
+    .custom-switch > .custom-control-input:checked ~ .custom-control-label::after {
+        -webkit-transform: scale(2) translateX(0.75rem);
+        transform: scale(2) translateX(0.75rem);
+    }
+    /* Enlarge and position the switch knob */
+    .custom-switch > .custom-control-label::after {
+        left: -1.75rem;
+        transform: scale(2);
+    }
+    /* Enlarge and position the switch socket */
+    .custom-switch > .custom-control-label::before {
+        left: -1.50rem;
+        transform: scale(2);
+    }
+    /*padding below switch*/
+    .settingsPadding {
+        padding-bottom: 15px;
+    }
+
     #searchResult > div {
         border-radius: 10px;
         margin-top: 15px;

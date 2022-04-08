@@ -54,7 +54,7 @@
     <body>
         <nav class="navbar">
             <div class="container">
-                <a class="inställningar" id="inställningar" href="#">Inställningar</a>
+                <a class="inställningar" id="inställningar" data-toggle="modal" data-target="#myModal">Inställningar</a>
                 <a class="home" id="home" href="#">Home</a>
                 <a class="labbar" id="labbar" href="#">Labbar</a>
                 <a class="admin" id="admin" href="#">Admin</a>
@@ -63,11 +63,6 @@
 
         <!-- BOOTSTRAP MODAL -->
         <div class="container">
-            <!-- Button to Open the Modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-              om projektet
-            </button>
-          
             <!-- The Modal -->
             <div class="modal fade" id="myModal">
               <div class="modal-dialog modal-lg">
@@ -75,20 +70,28 @@
                 
                   <!-- Modal Header -->
                   <div class="modal-header">
-                    <h4 class="modal-title">Modal Heading</h4>
+                    <h4 class="modal-title">Inställningar</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                   </div>
                   
                   <!-- Modal body -->
                   <div class="modal-body">
-                    Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...
+                      <!-- Default switch -->
+                      <div class="custom-control custom-switch settingsPadding">
+                        <input type="checkbox" class="custom-control-input" id="switchDarkmode">
+                        <label class="custom-control-label settingsControlLabel" for="switchDarkmode">Darkmode</label>
+                      </div>
+
+                      <div class="custom-control custom-switch settingsPadding">
+                        <input type="checkbox" class="custom-control-input" id="switchOther">
+                        <label class="custom-control-label" for="switchOther">Annan skum inställning</label>
+                      </div>
                   </div>
                   
                   <!-- Modal footer -->
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Stäng</button>
                   </div>
-                  
                 </div>
               </div>
             </div>

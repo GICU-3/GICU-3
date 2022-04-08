@@ -12,6 +12,11 @@ body {
   background-color: var(--color60);
   background-image: url("../images/main-background.jpg");
   background-size: cover;
+  /* Positioning the enlarged switch */
+  /* Sync the animation for switch knob */
+  /* Enlarge and position the switch knob */
+  /* Enlarge and position the switch socket */
+  /*padding below switch*/
 }
 
 body .navbar {
@@ -102,6 +107,32 @@ body .searchContentDivDescription a {
   position: relative;
   width: 150px;
   left: 0px;
+}
+
+body .custom-switch > .custom-control-label {
+  padding-left: 1.75rem;
+  padding-bottom: 0.5rem;
+}
+
+body .custom-switch > .custom-control-input:checked ~ .custom-control-label::after {
+  -webkit-transform: scale(2) translateX(0.75rem);
+  transform: scale(2) translateX(0.75rem);
+}
+
+body .custom-switch > .custom-control-label::after {
+  left: -1.75rem;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
+body .custom-switch > .custom-control-label::before {
+  left: -1.50rem;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
+body .settingsPadding {
+  padding-bottom: 15px;
 }
 
 body #searchResult > div {
