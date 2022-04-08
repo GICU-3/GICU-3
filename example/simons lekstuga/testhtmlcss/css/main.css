@@ -89,6 +89,9 @@ body .searchbar .search {
 body .searchContentDiv {
   background-color: var(--colorx);
   height: 25px;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -157,5 +160,10 @@ body #searchResult {
   background: none;
   height: 360px;
   overflow-y: auto;
+}
+
+div:focus {
+  font-weight: bold;
+  height: 240px;
 }
 /*# sourceMappingURL=main.css.map */
