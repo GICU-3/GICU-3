@@ -54,10 +54,10 @@
     <body>
         <nav class="navbar">
             <div class="container">
-                <a class="inställningar" id="inställningar" href="#">Inställningar</a>
-                <a class="home" id="home" href="#">Home</a>
-                <a class="labbar" id="labbar" href="#">Labbar</a>
-                <a class="admin" id="admin" href="#">Admin</a>
+              <a class="inställningar" id="inställningar" data-toggle="modal" data-target="#myModal">Inställningar</a>
+              <a class="home" id="home" href="#">Home</a>
+              <a class="labbar" id="labbar" href="#">Labbar</a>
+              <a class="admin" id="admin" href="#">Admin</a>
             </div>
         </nav>
 
@@ -74,17 +74,30 @@
                     <h4 class="modal-title">Modal Heading</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                   </div>
-                  
+
                   <!-- Modal body -->
                   <div class="modal-body">
-                    Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...Detta examensarbete skapades 2022 av...
+                    <!-- Default switch -->
+                    <div class="custom-control custom-switch settingsPadding">
+                      <input type="checkbox" class="custom-control-input" id="switchDarkmode">
+                      <label class="custom-control-label settingsControlLabel" for="switchDarkmode">Darkmode</label>
+                      <script>
+                        const themeSwitch = document.querySelector('input');
+                        themeSwitch.addEventListener('change', () => {
+                        document.body.classList.toggle('dark-theme');
+                        });
+                      </script>
+                    </div>
+                    <div class="custom-control custom-switch settingsPadding">
+                      <input type="checkbox" class="custom-control-input" id="switchOther">
+                      <label class="custom-control-label" for="switchOther">Annan skum inställning</label>
+                    </div>
                   </div>
                   
                   <!-- Modal footer -->
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                   </div>
-                  
                 </div>
               </div>
             </div>
@@ -100,6 +113,7 @@
         </div>
         <div id="searchHistory">
           <div class="searchHistoryTitle">Aktiva Sökningar</div>
+          <button id="removeHistory" class="removeHistory">Clear Searches</button>
         </div>
       </section>
     </body>

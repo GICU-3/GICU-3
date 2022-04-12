@@ -1,14 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
 :root{
-    --color60: #2d2d2d;
-    --color30: #f0f0f0;
-    --color10: #a3c4cb;
+    --textTheme: #f0f0f0;
+    --text2Theme: #1b1b1b;
+    --text3Theme: #f0f0f0;
+    --backgroundTheme: #f0f0f0;
+    --decorationTheme: #d5d5d5;
 }
+.dark-theme{
+    --textTheme: #f0f0f0;
+    --text2Theme: #f0f0f0;
+    --text3Theme: #1b1b1b;
+    --backgroundTheme: #2d2d2d;
+    --decorationTheme: #1b1b1b;
+    background-image: url('../images/main-background.jpg');
+}
+/*:root{
+    --textThemeLight: #f0f0f0;
+    --textThemeDark: #f0f0f0;
+    --text2ThemeLight: #1b1b1b;
+    --text2ThemeDark: #f0f0f0;
+    --backgroundThemeLight: #f0f0f0;
+    --backgroundThemeDark: #2d2d2d;
+    --decorationThemeLight: #a3c4cb;
+    --decorationThemeDark: #1b1b1b;
+    --textTheme: var(--textThemeLight);
+    --text2Theme: var(--text2ThemeLight);
+    --backgroundTheme: var(--backgroundThemeLight);
+    --decorationTheme: var(--decorationThemeLight);
+}
+.dark-theme{
+    --textTheme: var(--textThemeDark);
+    --text2Theme: var(--text2ThemeDark);
+    --backgroundTheme: var(--backgroundThemeDark);
+    --decorationTheme: var(--decorationThemeDark);
+}*/
 body{
     font-family: 'Ubuntu', sans-serif;
     margin: 0;
-    background-color: var(--color60);
-    background-image: url('../images/main-background.jpg');
+    background-image: url('../images/light-background.jpg');
     background-size: cover;
     .navbar{
         background: none;
@@ -29,7 +58,7 @@ body{
             color: white;
         }
         span{
-            color: var(--color10);
+            color: #a3c4cb;
         }
         h2{
             color: white;
@@ -42,15 +71,17 @@ body{
         text-align: center;
         background: none;
         font-size: 1.3em;
-        input{
-            display: inline;
-        }
         .search{
+            display: inline;
             width: 70%;
             height: 2em;
             border-radius: 0.4em;
             margin-bottom: 1em;
-            background-color: var(--color30);
+            background-color: var(--backgroundTheme);
+        }
+        ::placeholder {
+            color: var(--text2Theme);
+            font-size: smaller;
         }
         /*.button{
             height: 2.2em;
@@ -67,26 +98,23 @@ body{
         }*/
     }
     .searchContentDiv {
-        background-color: var(--color10);
+        background-color: var(--decorationTheme);
         height: 45px;
         justify-content: left;
         display: flex;
         padding-left: 10px;
         border-radius: 10px;
         align-items: center;
+        color: var(--text2Theme);
     }
     .searchContentDivDescription {
         width: 50%;
-        //margin-left: 96px;
-        //margin-top: 100px;
         position: relative;
-        //border-top-left-radius: 5px;
-        //top: -104px;
         font-size: 12px;
         align-items: center;
+        color: var(--text2Theme);
     }
     .searchContentDivDescription a {
-        //display: none;
         position: relative;
         width: 150px;
         left:0px;
@@ -98,7 +126,7 @@ body{
         margin-bottom: 15px;
         width: auto;
         height: 160px;
-        background: var(--color30);
+        background: var(--backgroundTheme);
         //overflow: hidden;
         margin-right: 15px;
         .container{
@@ -112,7 +140,6 @@ body{
     #searchResult img {
         width: auto;
         height: 48px;
-        background: var(--titlebarcolor);
         border-radius: 10px;
         
     }
@@ -151,9 +178,44 @@ body{
                     padding-left: 10px;
                     padding-right: 30px;
                     width: auto;
-                    filter: invert(100%) sepia(30%) saturate(80%) hue-rotate(157deg) brightness(104%) contrast(101%);
+                    filter: invert(100%) sepia(30%) saturate(80%) hue-rotate(157deg) brightness(104%) contrast(101%); //lösning för att ge svg färg
                 }
             }
+            .removeHistory{
+                position: absolute;
+                margin-top: 355px;
+                background-color: black;
+                color:#a3c4cb;
+                border: white 2px solid;
+                border-radius: 10px;
+                font-weight: bold;
+                width: 200px;
+                height: 40px;
+            }
         }
+    }
+    // Positioning the enlarged switch 
+    .custom-switch > .custom-control-label {
+        padding-left: 1.75rem;
+        padding-bottom: 0.5rem;
+    }
+    // Sync the animation for switch knob
+    .custom-switch > .custom-control-input:checked ~ .custom-control-label::after {
+        -webkit-transform: scale(2) translateX(0.75rem);
+        transform: scale(2) translateX(0.75rem);
+    }
+    // Enlarge and position the switch knob 
+    .custom-switch > .custom-control-label::after {
+        left: -1.75rem;
+        transform: scale(2);
+    }
+    // Enlarge and position the switch socket 
+    .custom-switch > .custom-control-label::before {
+        left: -1.50rem;
+        transform: scale(2);
+    }
+    // padding below switch
+    .settingsPadding {
+        padding-bottom: 15px;
     }
 }
