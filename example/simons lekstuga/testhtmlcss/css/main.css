@@ -1,15 +1,45 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
 :root {
-  --color60: #2d2d2d;
-  --color30: #f0f0f0;
-  --color10: #a3c4cb;
+  --textTheme: #f0f0f0;
+  --text2Theme: #1b1b1b;
+  --text3Theme: #f0f0f0;
+  --backgroundTheme: #f0f0f0;
+  --decorationTheme: #d5d5d5;
 }
 
+.dark-theme {
+  --textTheme: #f0f0f0;
+  --text2Theme: #f0f0f0;
+  --text3Theme: #1b1b1b;
+  --backgroundTheme: #2d2d2d;
+  --decorationTheme: #1b1b1b;
+  background-image: url("../images/main-background.jpg");
+}
+
+/*:root{
+    --textThemeLight: #f0f0f0;
+    --textThemeDark: #f0f0f0;
+    --text2ThemeLight: #1b1b1b;
+    --text2ThemeDark: #f0f0f0;
+    --backgroundThemeLight: #f0f0f0;
+    --backgroundThemeDark: #2d2d2d;
+    --decorationThemeLight: #a3c4cb;
+    --decorationThemeDark: #1b1b1b;
+    --textTheme: var(--textThemeLight);
+    --text2Theme: var(--text2ThemeLight);
+    --backgroundTheme: var(--backgroundThemeLight);
+    --decorationTheme: var(--decorationThemeLight);
+}
+.dark-theme{
+    --textTheme: var(--textThemeDark);
+    --text2Theme: var(--text2ThemeDark);
+    --backgroundTheme: var(--backgroundThemeDark);
+    --decorationTheme: var(--decorationThemeDark);
+}*/
 body {
   font-family: 'Ubuntu', sans-serif;
   margin: 0;
-  background-color: var(--color60);
-  background-image: url("../images/main-background.jpg");
+  background-image: url("../images/light-background.jpg");
   background-size: cover;
 }
 
@@ -62,27 +92,44 @@ body .searchbar h1 {
 }
 
 body .searchbar span {
-  color: var(--color10);
+  color: #a3c4cb;
 }
 
 body .searchbar h2 {
   color: white;
 }
 
-body .searchbar input {
-  display: inline;
-}
-
 body .searchbar .search {
+  display: inline;
   width: 70%;
   height: 2em;
   border-radius: 0.4em;
   margin-bottom: 1em;
-  background-color: var(--color30);
+  background-color: var(--backgroundTheme);
+}
+
+body .searchbar ::-webkit-input-placeholder {
+  color: var(--text2Theme);
+  font-size: smaller;
+}
+
+body .searchbar :-ms-input-placeholder {
+  color: var(--text2Theme);
+  font-size: smaller;
+}
+
+body .searchbar ::-ms-input-placeholder {
+  color: var(--text2Theme);
+  font-size: smaller;
+}
+
+body .searchbar ::placeholder {
+  color: var(--text2Theme);
+  font-size: smaller;
 }
 
 body .searchContentDiv {
-  background-color: var(--color10);
+  background-color: var(--decorationTheme);
   height: 45px;
   -webkit-box-pack: left;
       -ms-flex-pack: left;
@@ -95,6 +142,7 @@ body .searchContentDiv {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: var(--text2Theme);
 }
 
 body .searchContentDivDescription {
@@ -104,6 +152,7 @@ body .searchContentDivDescription {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: var(--text2Theme);
 }
 
 body .searchContentDivDescription a {
@@ -118,7 +167,7 @@ body #searchResult > div {
   margin-bottom: 15px;
   width: auto;
   height: 160px;
-  background: var(--color30);
+  background: var(--backgroundTheme);
   margin-right: 15px;
 }
 
@@ -138,7 +187,6 @@ body #searchResult > div .container {
 body #searchResult img {
   width: auto;
   height: 48px;
-  background: var(--titlebarcolor);
   border-radius: 10px;
 }
 
@@ -197,5 +245,43 @@ body .bodySection #searchHistory .chosen img {
   width: auto;
   -webkit-filter: invert(100%) sepia(30%) saturate(80%) hue-rotate(157deg) brightness(104%) contrast(101%);
           filter: invert(100%) sepia(30%) saturate(80%) hue-rotate(157deg) brightness(104%) contrast(101%);
+}
+
+body .bodySection #searchHistory .removeHistory {
+  position: absolute;
+  margin-top: 355px;
+  background-color: black;
+  color: #a3c4cb;
+  border: white 2px solid;
+  border-radius: 10px;
+  font-weight: bold;
+  width: 200px;
+  height: 40px;
+}
+
+body .custom-switch > .custom-control-label {
+  padding-left: 1.75rem;
+  padding-bottom: 0.5rem;
+}
+
+body .custom-switch > .custom-control-input:checked ~ .custom-control-label::after {
+  -webkit-transform: scale(2) translateX(0.75rem);
+  transform: scale(2) translateX(0.75rem);
+}
+
+body .custom-switch > .custom-control-label::after {
+  left: -1.75rem;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
+body .custom-switch > .custom-control-label::before {
+  left: -1.50rem;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
+body .settingsPadding {
+  padding-bottom: 15px;
 }
 /*# sourceMappingURL=main.css.map */

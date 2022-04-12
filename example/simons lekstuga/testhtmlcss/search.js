@@ -114,6 +114,9 @@ function summonBar(inputJson) { // Reads the JSONdata and makes it magically app
 
         element_id.addEventListener("click", sayhello); //säger vilket id div tillhör
 
+        var del_history = document.getElementById("removeHistory");
+        del_history.addEventListener("click", removebutton);
+
         function sayhello() {
             var selected = document.querySelectorAll(".chosen");
             let r = document.createElement("div");
@@ -136,6 +139,15 @@ function summonBar(inputJson) { // Reads the JSONdata and makes it magically app
             searchHistory.appendChild(r);
             r.appendChild(image);
         }
+        function removebutton() {
+            var selected = document.querySelectorAll(".chosen");
+            selected.forEach(function(div, e) {
+                var a = document.getElementsByClassName("chosen")
+                var b = document.getElementById(a[e].id);
+                try { b.parentNode.removeChild(b) } catch {};
+            })
+        }
+        
         /*if (element_id !== sayhello().target && !element_id.contains(sayhello().target)) {    
             console.log('clicking outside the div');
             element_id.style.height == "160px";
