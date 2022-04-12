@@ -7,7 +7,7 @@
     --backgroundTheme: #f0f0f0;
     --decorationTheme: #d5d5d5;
 }
-//dark thwme color definitions
+//dark theme color definitions
 .dark-theme{
     --textTheme: #f0f0f0;
     --text2Theme: #f0f0f0;
@@ -16,8 +16,9 @@
     --decorationTheme: #1b1b1b;
     background-image: url('../images/main-background.jpg');
 }
+
 body{
-    font-family: 'Ubuntu', sans-serif; //standrad font
+    font-family: 'Ubuntu', sans-serif; //standard font
     margin: 0;
     background-image: url('../images/light-background.jpg');
     background-size: cover;
@@ -40,12 +41,10 @@ body{
     .searchbar{
         h1{
             color: white;
+            margin: 20px;
         }
         span{
             color: #a3c4cb;
-        }
-        h2{
-            color: white;
         }
         margin-left: 256px;
         width: 512px;

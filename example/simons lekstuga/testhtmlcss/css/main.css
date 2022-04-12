@@ -56,14 +56,11 @@ body .searchbar {
 
 body .searchbar h1 {
   color: white;
+  margin: 20px;
 }
 
 body .searchbar span {
   color: #a3c4cb;
-}
-
-body .searchbar h2 {
-  color: white;
 }
 
 body .searchbar .search {
