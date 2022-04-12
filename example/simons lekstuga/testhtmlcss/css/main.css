@@ -16,26 +16,6 @@
   background-image: url("../images/main-background.jpg");
 }
 
-/*:root{
-    --textThemeLight: #f0f0f0;
-    --textThemeDark: #f0f0f0;
-    --text2ThemeLight: #1b1b1b;
-    --text2ThemeDark: #f0f0f0;
-    --backgroundThemeLight: #f0f0f0;
-    --backgroundThemeDark: #2d2d2d;
-    --decorationThemeLight: #a3c4cb;
-    --decorationThemeDark: #1b1b1b;
-    --textTheme: var(--textThemeLight);
-    --text2Theme: var(--text2ThemeLight);
-    --backgroundTheme: var(--backgroundThemeLight);
-    --decorationTheme: var(--decorationThemeLight);
-}
-.dark-theme{
-    --textTheme: var(--textThemeDark);
-    --text2Theme: var(--text2ThemeDark);
-    --backgroundTheme: var(--backgroundThemeDark);
-    --decorationTheme: var(--decorationThemeDark);
-}*/
 body {
   font-family: 'Ubuntu', sans-serif;
   margin: 0;
@@ -72,19 +52,6 @@ body .searchbar {
   text-align: center;
   background: none;
   font-size: 1.3em;
-  /*.button{
-            height: 2.2em;
-            width: 20%;
-            background-color: white;
-            border-radius: 1.3em;
-            font-size: 0.7em;
-            color: rgb(0, 180, 0);
-            border-color: rgb(0, 180, 0);
-            cursor: pointer;
-            :hover {
-                font-weight: bolder;
-            }
-        }*/
 }
 
 body .searchbar h1 {
