@@ -1,6 +1,7 @@
 const Fuse = require('fuse.js')
 const fs = require('fs');
 const { runInContext } = require('vm');
+const { DefaultDeserializer } = require('v8');
 
 function sleep(ms) {
     return new Promise((resolve) => {
@@ -41,31 +42,36 @@ function fuseSearch() {
     const options = {
         threshold: 0.0
     }
+    books.forEach(function(o, i) {
+        // 2. Set up the Fuse instance
+        const fuse = new Fuse(books[i], {
+            keys: ['utility', 'keywords', 'description']
+        })
 
-    // 2. Set up the Fuse instance
-    const fuse = new Fuse(books, {
-        keys: ['utility', 'keywords', 'description']
-    })
+        // 3. Now search!
 
-    // 3. Now search!
+        var outputJson = fuse.search(document.getElementById("search").value);
+        //console.log(outputJson
 
-    var outputJson = fuse.search(document.getElementById("search").value);
-    //console.log(outputJson)
-    summonBar(outputJson);
+        summonBar(outputJson);
+    });
+    add();
 }
 
 function summonAllEmpty() {
     var books = JSON.parse(fs.readFileSync('utilities.json', 'utf8'));
     let booksOutput = [];
-    books.forEach(function(obj) {
-        let booksAfter = {};
-        booksAfter.item = obj;
+    books.forEach(function(element, i) {
+        books[i].forEach(function(obj) {
+            let booksAfter = {};
+            booksAfter.item = obj;
 
-        booksOutput.push(booksAfter);
-
+            booksOutput.push(booksAfter);
+        });
     });
     //console.log(booksOutput);
     summonBar(booksOutput);
+    add();
 }
 
 function summonBar(inputJson) { // Reads the JSONdata and makes it magically appear under Search
@@ -138,6 +144,7 @@ function summonBar(inputJson) { // Reads the JSONdata and makes it magically app
             })
             searchHistory.appendChild(r);
             r.appendChild(image);
+            add();
         }
         function removebutton() {
             var selected = document.querySelectorAll(".chosen");

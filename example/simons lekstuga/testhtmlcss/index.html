@@ -7,6 +7,7 @@
         <title>GICU-3</title>
         <link rel="stylesheet" href="css/main.css">
         <script src="navigation.js"></script>
+        <script src="databas.js"></script>
         <script defer src="search.js"></script>
 
         <!-- BOOTSTRAP MODAL -->
@@ -55,9 +56,9 @@
         <nav class="navbar">
             <div class="container">
               <a class="inställningar" id="inställningar" data-toggle="modal" data-target="#myModal">Inställningar</a>
-              <a class="home" id="home" href="#">Home</a>
+              <a class="home" id="home" onclick="home()" href="#">Home</a>
               <a class="labbar" id="labbar" onclick="labbar()" href="#">Labbar</a>
-              <a class="admin" id="admin" href="#">Admin</a>
+              <a class="admin" id="admin" onclick="admin()" href="#">Admin</a>
             </div>
         </nav>
 
@@ -110,13 +111,15 @@
             <!-- <input class="button" type="button" value="Search"> -->
             <div id="searchResult"></div>
         </div>
-        <div id="labbarInterface" class="labbarInterface">
-
-        </div>
         <div id="searchHistory">
           <div class="searchHistoryTitle">Aktiva Sökningar</div>
           <button id="removeHistory" class="removeHistory">Clear Searches</button>
         </div>
       </section>
+      <div id="admin_s"></div>
+      <div id="data"></div>
+      <div id="labbarInterface" class="labbarInterface">
+
+      </div>
     </body>
 </html> 
