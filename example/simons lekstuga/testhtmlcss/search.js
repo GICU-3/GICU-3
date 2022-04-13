@@ -15,6 +15,11 @@ document.getElementById("search").onkeyup = function() {
     }
 };
 
+//AUTOMATISK SÖK VID KEYDOWN EVENT. FUNGERAR EJ. DEN NEDRE RADEN FUNGERAR
+//OM DEN ÖVRE TAS BORT. MEN DEN FUNGERAR ENDAST VID OMLADDNING (CTRL+R)
+//document.addEventListener("keydown").focus();
+//document.getElementById("search").focus();
+
 document.getElementById("search").onfocus = async function() {
     document.getElementById("searchResult").style.display = "block";
     //console.log("focused");
