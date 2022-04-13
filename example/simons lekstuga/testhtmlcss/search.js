@@ -14,24 +14,17 @@ document.getElementById("search").onkeyup = function() {
         summonAllEmpty();
     }
 };
+   
+document.getElementById("search").onfocus = async function() {
+document.getElementById("searchResult").style.display = "block";
+//console.log("focused");
 
-//AUTOMATISK SÖK VID KEYDOWN EVENT. FUNGERAR EJ. DEN NEDRE RADEN FUNGERAR
-//OM DEN ÖVRE TAS BORT. MEN DEN FUNGERAR ENDAST VID OMLADDNING (CTRL+R)
-//document.addEventListener("keydown").focus();
-//document.getElementById("search").focus();
-document.addEventListener("keypress", function(e) {
-    console.log(e.key)
-    document.getElementById("search").value += e.key;
-    //document.getElementById("search").onfocus = async function() {
-    document.getElementById("searchResult").style.display = "block";
-    //console.log("focused");
+    if (!document.getElementById("search").value) {
+        summonAllEmpty();
+    }
+};
 
-        //if (!document.getElementById("search").value) {
-            summonAllEmpty();
-        //}
-    //};
-})
-
+//FUNGERAR ENDAST EFTER INITIALT TRYCK I SÖKRUTAN. VET EJ VARFÖR.
 document.getElementById("search").onblur = async function() {
     await sleep(100);
     add();
@@ -39,6 +32,9 @@ document.getElementById("search").onblur = async function() {
     if (document.getElementById("search").value == 0) {
         document.getElementById("searchResult").style.display = "none";
         console.log("offfocused");
+        document.addEventListener("keypress", function(e){
+            document.getElementById("search").focus();
+        })
     }
 };
 
