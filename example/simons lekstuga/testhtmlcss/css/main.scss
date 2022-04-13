@@ -14,26 +14,6 @@
     --decorationTheme: #1b1b1b;
     background-image: url('../images/main-background.jpg');
 }
-/*:root{
-    --textThemeLight: #f0f0f0;
-    --textThemeDark: #f0f0f0;
-    --text2ThemeLight: #1b1b1b;
-    --text2ThemeDark: #f0f0f0;
-    --backgroundThemeLight: #f0f0f0;
-    --backgroundThemeDark: #2d2d2d;
-    --decorationThemeLight: #a3c4cb;
-    --decorationThemeDark: #1b1b1b;
-    --textTheme: var(--textThemeLight);
-    --text2Theme: var(--text2ThemeLight);
-    --backgroundTheme: var(--backgroundThemeLight);
-    --decorationTheme: var(--decorationThemeLight);
-}
-.dark-theme{
-    --textTheme: var(--textThemeDark);
-    --text2Theme: var(--text2ThemeDark);
-    --backgroundTheme: var(--backgroundThemeDark);
-    --decorationTheme: var(--decorationThemeDark);
-}*/
 body{
     font-family: 'Ubuntu', sans-serif;
     margin: 0;

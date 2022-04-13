@@ -6,8 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>GICU-3</title>
         <link rel="stylesheet" href="css/main.css">
+        <script src="navigation.js"></script>
         <script defer src="search.js"></script>
-        <script defer src="onclick.js"></script>
 
         <!-- BOOTSTRAP MODAL -->
         <!-- Insert this line above script imports  -->
@@ -56,7 +56,7 @@
             <div class="container">
               <a class="inställningar" id="inställningar" data-toggle="modal" data-target="#myModal">Inställningar</a>
               <a class="home" id="home" href="#">Home</a>
-              <a class="labbar" id="labbar" href="#">Labbar</a>
+              <a class="labbar" id="labbar" onclick="labbar()" href="#">Labbar</a>
               <a class="admin" id="admin" href="#">Admin</a>
             </div>
         </nav>
@@ -103,12 +103,15 @@
             </div>
           </div>
           <!-- BOOTSTRAP MODAL END -->
-      <section class="bodySection">
-        <div class="searchbar">
+      <section id="bodySection" class="bodySection">
+        <div id="searchbar" class="searchbar">
             <h1>GICU-<span>3</span></h1>
             <input id="search" class="search" type="text" placeholder="enter component name or keyword">
             <!-- <input class="button" type="button" value="Search"> -->
             <div id="searchResult"></div>
+        </div>
+        <div id="labbarInterface" class="labbarInterface">
+
         </div>
         <div id="searchHistory">
           <div class="searchHistoryTitle">Aktiva Sökningar</div>
