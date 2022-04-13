@@ -19,15 +19,19 @@ document.getElementById("search").onkeyup = function() {
 //OM DEN ÖVRE TAS BORT. MEN DEN FUNGERAR ENDAST VID OMLADDNING (CTRL+R)
 //document.addEventListener("keydown").focus();
 //document.getElementById("search").focus();
-
-document.getElementById("search").onfocus = async function() {
+document.addEventListener("keypress", function(e) {
+    console.log(e.key)
+    document.getElementById("search").value += e.key;
+    //document.getElementById("search").onfocus = async function() {
     document.getElementById("searchResult").style.display = "block";
     //console.log("focused");
 
-    if (!document.getElementById("search").value) {
-        summonAllEmpty();
-    }
-};
+        //if (!document.getElementById("search").value) {
+            summonAllEmpty();
+        //}
+    //};
+})
+
 document.getElementById("search").onblur = async function() {
     await sleep(100);
     add();
